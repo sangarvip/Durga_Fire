@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Durga Fire & Safety Consultants — Gujarat's Most Trusted Fire Safety Experts Since 1990</title>
+  <meta name="description"
+    content="Durga Fire & Safety Consultants — 35+ years of excellence, 700+ trained professionals, 40+ active industrial sites. Gujarat's premier fire safety consultancy serving India's most demanding industries." />
+  <meta name="keywords"
+    content="fire safety consultants Gujarat, GIDC fire station management, industrial fire safety, fire safety training India, Durga Fire" />
+  <meta property="og:title" content="Durga Fire & Safety Consultants" />
+  <meta property="og:description"
+    content="35+ years of excellence. 700+ professionals. Gujarat's most trusted fire safety consultancy." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://www.durgafire.com/" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Durga Fire & Safety Consultants",
+    "description": "Gujarat's most trusted fire safety consultancy since 1990",
+    "foundingDate": "1990",
+    "areaServed": "India",
+    "address": { "@type": "PostalAddress", "addressRegion": "Gujarat", "addressCountry": "IN" },
+    "url": "https://www.durgafire.com"
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════════
+     CONSULTATION FORM MODAL
+════════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="consultModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">🔴 Free Safety Consultation</h3>
+        <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="consultForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Full Name *</label>
+              <input type="text" id="fname" name="fname" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="company">Company / Organisation *</label>
+              <input type="text" id="company" name="company" placeholder="Company name" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Required</label>
+            <select id="service" name="service">
+              <option value="">— Select a Service —</option>
+              <option>Fire Station Management</option>
+              <option>Trained Fire Manpower Supply</option>
+              <option>Industrial Medical Services</option>
+              <option>Fire Safety Training</option>
+              <option>ECC Operations</option>
+              <option>Fire Safety Consulting</option>
+              <option>Other Services</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Brief description of your requirement…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit" id="formSubmit">
+            Send Consultation Request →
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════
+     MOBILE NAV
+════════════════════════════════════════════════════ -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+    <a href="#hero">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <!-- <a href="industries.html">Industries</a>-->
+    <!-- <a href="locations.html">Locations</a> -->
+    <!-- <a href="resources.html">Resources</a> -->
+    <a href="careers.html">Careers</a>
+    <a href="contact.html">Contact</a>
+    <a href="tel:+91XXXXXXXXXX" class="btn btn-primary" id="mobileEmergencyBtn">
+      📞 Emergency Support 24/7
+    </a>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════════ -->
+  <header id="header" role="banner">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="Durga Fire Home">
+        <div class="logo-icon" aria-hidden="true">
+          <img src="./assets/logos/logo.webp" alt="Durga Fire Logo">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Durga Fire</span>
+          <span class="logo-sub">Safety Consultants</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" aria-label="Main navigation">
+        <a href="#hero" class="active">Home</a>
+        <a href="about.html">About Us</a>
+
+        <!-- Services Dropdown -->
+        <div class="nav-item" id="servicesDropdown">
+          <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="servicesBtn">
+            Services <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu" aria-label="Services submenu">
+            <a href="services.html#fire-station" role="menuitem"><span class="dm-icon">🚒</span> Fire Station
+              Management</a>
+            <a href="services.html#manpower" role="menuitem"><span class="dm-icon">👷</span> Trained Fire Manpower</a>
+            <a href="services.html#medical" role="menuitem"><span class="dm-icon">🏥</span> Industrial Medical
+              Services</a>
+            <a href="services.html#training" role="menuitem"><span class="dm-icon">🎓</span> Fire Safety Training</a>
+            <a href="services.html#ecc" role="menuitem"><span class="dm-icon">🛡️</span> ECC Operations</a>
+            <a href="services.html#consulting" role="menuitem"><span class="dm-icon">📋</span> Fire Safety
+              Consulting</a>
+          </div>
+        </div>
+
+        <!-- <a href="industries.html">Industries</a> -->
+        <!--  <a href="locations.html">Locations</a>  -->
+
+        <!-- Resources Dropdown 
+        <div class="nav-item" id="resourcesDropdown">
+          <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="resourcesBtn">
+            Resources <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu" aria-label="Resources submenu">
+            <a href="resources.html#blog" role="menuitem"><span class="dm-icon">📝</span> Blog</a>
+            <a href="resources.html#safety-tips" role="menuitem"><span class="dm-icon">💡</span> Safety Tips</a>
+            <a href="resources.html#compliance" role="menuitem"><span class="dm-icon">📄</span> Compliance Guides</a>
+            <a href="resources.html#checklist" role="menuitem"><span class="dm-icon">✅</span> Fire Safety Checklist</a>
+            <a href="resources.html#news" role="menuitem"><span class="dm-icon">📰</span> News & Updates</a>
+          </div>
+        </div> -->
+
+        <!-- <a href="careers.html">Careers</a> -->
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- Header CTA -->
+      <div class="header-cta">
+        <a href="tel:+91XXXXXXXXXX" class="btn btn-primary" id="headerEmergencyBtn">
+          📞 Emergency Support 24/7
+        </a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- ════════════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════════════ -->
+  <main id="main-content">
+    <section id="hero" aria-label="Hero section">
+      <!-- Background — cinematic dark gradient with SVG pattern -->
+      <div class="hero-bg" aria-hidden="true">
+
+      </div>
+
+
+      <!-- Animated flame particles -->
+      <div class="hero-particles" aria-hidden="true" id="heroParticles"></div>
+
+      <div class="hero-content container">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Protecting India Since 1990 · Rashtrapati Award
+        </div>
+
+        <h1 class="hero-headline">
+          Protecting Lives.<br>
+          <span class="highlight">Securing Industries.</span>
+        </h1>
+        <p class="hero-subline">Serving India Since 1990.</p>
+
+        <p class="hero-body">
+          Gujarat's most trusted fire safety consultancy — 35 years of excellence,
+          700 trained professionals, 40+ industrial sites, and one unwavering
+          mission: <strong style="color:rgba(255,255,255,0.90)">your safety.</strong>
+        </p>
+
+        <div class="hero-btns">
+          <button class="btn btn-primary" id="heroConsultBtn">
+            🔴 Get a Free Safety Consultation
+          </button>
+          <button class="btn btn-outline-white" id="heroStoryBtn">
+            ▶ Watch Our Story
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+     TRUST BAR
+════════════════════════════════════════════════════ -->
+    <section id="trust-bar" aria-label="Key statistics">
+      <div class="trust-bar-inner container" style="max-width:100%; padding:0 5%;">
+        <div class="trust-item reveal">
+          <div class="trust-icon" aria-hidden="true">🏆</div>
+          <div class="trust-value"><span class="counter" data-target="35">0</span>+</div>
+          <div class="trust-label">Years of Excellence</div>
+        </div>
+        <div class="trust-item reveal reveal-delay-1">
+          <div class="trust-icon" aria-hidden="true">👥</div>
+          <div class="trust-value"><span class="counter" data-target="700">0</span>+</div>
+          <div class="trust-label">Trained Professionals</div>
+        </div>
+        <div class="trust-item reveal reveal-delay-2">
+          <div class="trust-icon" aria-hidden="true">🏭</div>
+          <div class="trust-value"><span class="counter" data-target="40">0</span>+</div>
+          <div class="trust-label">Active Client Sites</div>
+        </div>
+        <div class="trust-item reveal reveal-delay-3">
+          <div class="trust-icon" aria-hidden="true">🚒</div>
+          <div class="trust-value"><span class="counter" data-target="12">0</span></div>
+          <div class="trust-label">GIDC Fire Stations</div>
+        </div>
+        <div class="trust-item reveal reveal-delay-4">
+          <div class="trust-icon" aria-hidden="true">🎖️</div>
+          <div class="trust-value">1975</div>
+          <div class="trust-label">Rashtrapati Award</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+     BRAND STATEMENT
+════════════════════════════════════════════════════ -->
+    <section id="brand-statement" aria-label="About Durga Fire">
+      <div class="container">
+        <div class="brand-statement-inner">
+          <div class="brand-statement-text reveal">
+            <span class="section-tag">Our Legacy</span>
+            <h2 class="section-heading">
+              We Don't Just Protect Facilities.<br>We Protect Futures.
+            </h2>
+            <p>
+              At <strong>Durga Fire &amp; Safety Consultants</strong>, fire safety isn't a service…
+              it's a legacy. Founded on the principles of discipline, dedication, and an unwavering
+              commitment to saving lives, we have grown from a single fire brigade to Gujarat's most
+              comprehensive fire safety and emergency response organization.
+            </p>
+            <p>
+              From chemical plants in <strong>Dahej</strong> to the iconic
+              <strong>Statue of Unity at Ekta Nagar</strong> — when safety matters most,
+              industries trust Durga Fire.
+            </p>
+            <a href="about.html" class="btn btn-outline-navy" style="margin-top:8px; display:inline-flex;">
+              Our Story →
+            </a>
+          </div>
+
+          <!-- Visual panel with stat badge -->
+          <div class="brand-visual reveal reveal-delay-2">
+            <div class="brand-visual-img"
+              style="background:linear-gradient(145deg,#0B1B3D 0%,#1a3a7a 50%,#0d2455 100%); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;">
+              <!-- Decorative SVG fire / shield visual -->
+              <svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true">
+                <circle cx="120" cy="120" r="110" stroke="rgba(224,52,42,0.15)" stroke-width="2" />
+                <circle cx="120" cy="120" r="85" stroke="rgba(224,52,42,0.10)" stroke-width="1.5" />
+                <!-- Shield -->
+                <path d="M120 30 L170 55 L170 105 Q170 150 120 175 Q70 150 70 105 L70 55 Z" fill="rgba(224,52,42,0.18)"
+                  stroke="rgba(224,52,42,0.50)" stroke-width="2" />
+                <!-- Flame -->
+                <path
+                  d="M120 155 C110 140 100 125 108 108 C112 100 108 90 115 82 C114 95 122 97 125 88 C132 72 128 58 135 48 C145 65 148 82 140 100 C148 95 152 88 150 78 C158 92 158 110 150 125 C146 133 140 140 130 148 C135 138 133 128 128 120 C125 130 124 143 120 155Z"
+                  fill="rgba(224,52,42,0.70)" />
+                <!-- Glow rings -->
+                <circle cx="120" cy="120" r="50" stroke="rgba(255,255,255,0.04)" stroke-width="30" />
+              </svg>
+            </div>
+            <div class="brand-visual-badge">
+              <div class="badge-num">35+</div>
+              <div class="badge-txt">Years of Uninterrupted Service</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+     WHY CHOOSE US
+════════════════════════════════════════════════════ -->
+    <section id="why-choose" aria-label="Why choose Durga Fire">
+      <div class="container">
+        <div class="why-choose-header">
+          <span class="section-tag">Our Differentiators</span>
+          <h2 class="section-heading centered">What Sets Durga Fire Apart</h2>
+          <p class="section-sub centered">
+            Three decades of dedication, recognized by the highest authorities, delivered by the most qualified
+            professionals.
+          </p>
+        </div>
+
+        <div class="why-choose-grid">
+
+          <article class="why-card reveal">
+            <div class="why-card-icon" aria-hidden="true">🏆</div>
+            <h3>Legacy You Can Trust</h3>
+            <p>35+ years of continuous fire safety operations. Rashtrapati Award winning foundation. Three generations
+              of expertise serving India's most critical industries.</p>
+          </article>
+
+          <article class="why-card reveal reveal-delay-1">
+            <div class="why-card-icon" aria-hidden="true">🏭</div>
+            <h3>Scale That Speaks</h3>
+            <p>700 trained professionals deployed across 40+ industrial sites spanning Gujarat, Rajasthan, and beyond —
+              reliable, round-the-clock.</p>
+          </article>
+
+          <article class="why-card reveal reveal-delay-2">
+            <div class="why-card-icon" aria-hidden="true">⚗️</div>
+            <h3>Industry Expertise</h3>
+            <p>Specialized experience in chemical, pharmaceutical, petrochemical, power, and government sectors —
+              tailored protocols for every risk environment.</p>
+          </article>
+
+          <article class="why-card reveal reveal-delay-1">
+            <div class="why-card-icon" aria-hidden="true">🕐</div>
+            <h3>24/7/365 Commitment</h3>
+            <p>Round-the-clock emergency response. Our teams never sleep because emergencies don't follow schedules.
+              Always on standby, always ready.</p>
+          </article>
+
+          <article class="why-card reveal reveal-delay-2">
+            <div class="why-card-icon" aria-hidden="true">🏛️</div>
+            <h3>Government Trusted</h3>
+            <p>Officially awarded continuous services management by GIDC Ankleshwar (DPMC) for 35 consecutive years — a
+              testament to consistent excellence.</p>
+          </article>
+
+          <article class="why-card reveal reveal-delay-3">
+            <div class="why-card-icon" aria-hidden="true">📋</div>
+            <h3>Certified Professionals</h3>
+            <p>Every team member holds government-recognized qualifications — from BE Fire &amp; Safety to NEBOSH and
+              IOSH certifications. Qualified. Proven. Trusted.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+     CORE SERVICES
+════════════════════════════════════════════════════ -->
+    <section id="services" aria-label="Our services">
+      <div class="container">
+        <div class="services-header">
+          <span class="section-tag">What We Do</span>
+          <h2 class="section-heading centered">Comprehensive Fire Safety Solutions</h2>
+          <p class="section-sub centered">Tailored for India's Most Demanding Industries</p>
+        </div>
+
+        <div class="services-grid">
+
+          <article class="service-card reveal">
+            <div class="service-icon" aria-hidden="true">🔥</div>
+            <h3>Fire Station Management</h3>
+            <p>Complete fire station operations, manpower deployment, and emergency response management for GIDC zones
+              and industrial estates across Gujarat.</p>
+            <a href="services.html#fire-station" class="learn-more"
+              aria-label="Learn more about Fire Station Management">Learn More →</a>
+          </article>
+
+          <article class="service-card reveal reveal-delay-1">
+            <div class="service-icon" aria-hidden="true">👷</div>
+            <h3>Trained Fire Manpower Supply</h3>
+            <p>Qualified Fire Officers, Assistant Fire Officers, Driver Cum Pump Operators, Firemen, and Safety Stewards
+              — certified and deployment-ready.</p>
+            <a href="services.html#manpower" class="learn-more" aria-label="Learn more about Fire Manpower Supply">Learn
+              More →</a>
+          </article>
+
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-icon" aria-hidden="true">🏥</div>
+            <h3>Industrial Medical Services</h3>
+            <p>MBBS Industrial Doctors, Male Nurses, and medical emergency response teams for manufacturing facilities —
+              healthcare where it matters most.</p>
+            <a href="services.html#medical" class="learn-more"
+              aria-label="Learn more about Industrial Medical Services">Learn More →</a>
+          </article>
+
+          <article class="service-card reveal reveal-delay-1">
+            <div class="service-icon" aria-hidden="true">🎓</div>
+            <h3>Fire Safety Training</h3>
+            <p>Mock drills, table-top exercises, firemanship drills, TBT sessions, and emergency preparedness programs
+              customized to your facility's risk profile.</p>
+            <a href="services.html#training" class="learn-more" aria-label="Learn more about Fire Safety Training">Learn
+              More →</a>
+          </article>
+
+          <article class="service-card reveal reveal-delay-2">
+            <div class="service-icon" aria-hidden="true">🛡️</div>
+            <h3>Emergency Control Centre (ECC) Operations</h3>
+            <p>24/7 alarm monitoring, emergency coordination, and incident response management — a vigilant nerve centre
+              that never goes offline.</p>
+            <a href="services.html#ecc" class="learn-more" aria-label="Learn more about ECC Operations">Learn More →</a>
+          </article>
+
+          <article class="service-card reveal reveal-delay-3">
+            <div class="service-icon" aria-hidden="true">📋</div>
+            <h3>Fire Safety Consulting</h3>
+            <p>Vulnerability assessments, risk mitigation strategies, compliance audits, and emergency preparedness
+              planning for regulatory adherence and operational safety.</p>
+            <a href="services.html#consulting" class="learn-more"
+              aria-label="Learn more about Fire Safety Consulting">Learn More →</a>
+          </article>
+
+        </div>
+
+        <div class="services-cta">
+          <a href="services.html">Explore All Services <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+     NUMBERS SECTION
+════════════════════════════════════════════════════ -->
+    <section id="numbers" aria-label="Our impact in numbers">
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="numbers-header">
+          <span class="section-tag" style="background:rgba(224,52,42,0.20); color:#ff7a73;">Our Impact</span>
+          <h2 class="section-heading centered light">Our Impact in Numbers</h2>
+          <p class="section-sub centered light">Three decades of protecting India's most critical industries.</p>
+        </div>
+
+        <div class="numbers-grid reveal">
+          <div class="number-item">
+            <div class="number-val"><span class="counter" data-target="35">0</span><span class="accent">+</span></div>
+            <div class="number-label">Years of Uninterrupted Operations</div>
+          </div>
+          <div class="number-item">
+            <div class="number-val"><span class="counter" data-target="700">0</span><span class="accent">+</span></div>
+            <div class="number-label">Trained Professionals Deployed</div>
+          </div>
+          <div class="number-item">
+            <div class="number-val"><span class="counter" data-target="40">0</span><span class="accent">+</span></div>
+            <div class="number-label">Active Client Sites Across India</div>
+          </div>
+          <div class="number-item">
+            <div class="number-val"><span class="counter" data-target="12">0</span></div>
+            <div class="number-label">GIDC Fire Stations Under Management</div>
+          </div>
+          <div class="number-item">
+            <div class="number-val"><span class="counter" data-target="9">0</span></div>
+            <div class="number-label">Specialized Roles, Fire Officers to Doctors</div>
+          </div>
+          <div class="number-item">
+            <div class="number-val" style="font-size:2rem; line-height:1.2;">Rashtrapati<br><span class="accent"
+                style="font-size:1.5rem;">Award</span></div>
+            <div class="number-label">India's Highest Civilian Honor in Fire Safety</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+     INDUSTRIES WE SERVE
+════════════════════════════════════════════════════ -->
+    <section id="industries" aria-label="Industries we serve">
+      <div class="container">
+        <div class="industries-header">
+          <span class="section-tag" style="background:rgba(224,52,42,0.18); color:#ff7a73;">Sectors</span>
+          <h2 class="section-heading centered light">Industries We Serve</h2>
+          <p class="section-sub centered light">
+            From chemical complexes to iconic monuments — wherever safety matters, Durga Fire is there.
+          </p>
+        </div>
+
+        <div class="industries-grid">
+          <div class="industry-item reveal">
+            <div class="industry-icon" aria-hidden="true">⚗️</div>
+            <div class="industry-name">Chemical &amp; Petrochemical</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-1">
+            <div class="industry-icon" aria-hidden="true">💊</div>
+            <div class="industry-name">Pharmaceutical</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-2">
+            <div class="industry-icon" aria-hidden="true">🏭</div>
+            <div class="industry-name">Manufacturing</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-3">
+            <div class="industry-icon" aria-hidden="true">📦</div>
+            <div class="industry-name">Warehousing &amp; Logistics</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-4">
+            <div class="industry-icon" aria-hidden="true">🏗️</div>
+            <div class="industry-name">Industrial Estates</div>
+          </div>
+          <div class="industry-item reveal">
+            <div class="industry-icon" aria-hidden="true">🏛️</div>
+            <div class="industry-name">Government &amp; Semi-Govt.</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-1">
+            <div class="industry-icon" aria-hidden="true">🏥</div>
+            <div class="industry-name">Hospitals &amp; Healthcare</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-2">
+            <div class="industry-icon" aria-hidden="true">🏢</div>
+            <div class="industry-name">Commercial &amp; Corporate</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-3">
+            <div class="industry-icon" aria-hidden="true">⚡</div>
+            <div class="industry-name">Power &amp; Energy</div>
+          </div>
+          <div class="industry-item reveal reveal-delay-4">
+            <div class="industry-icon" aria-hidden="true">🎓</div>
+            <div class="industry-name">Educational Institutions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+     FEATURED PROJECTS
+════════════════════════════════════════════════════ -->
+    <section id="projects" aria-label="Featured projects">
+      <div class="container">
+        <div class="projects-header">
+          <span class="section-tag">Our Work</span>
+          <h2 class="section-heading centered">Trusted by India's Biggest Names</h2>
+          <p class="section-sub centered">
+            High-stakes environments that rely on Durga Fire's expertise every single day.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project Card 1 -->
+          <article class="project-card reveal">
+            <div class="project-card-img" style="position:relative;">
+              <!-- Decorative SVG monument -->
+              <svg width="100%" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                preserveAspectRatio="xMidYMid slice">
+                <rect width="400" height="200" fill="url(#grad1)" />
+                <defs>
+                  <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#0B1B3D" />
+                    <stop offset="100%" stop-color="#1a3a7a" />
+                  </linearGradient>
+                </defs>
+                <!-- Statue of Unity silhouette simplified -->
+                <rect x="188" y="40" width="24" height="130" rx="3" fill="rgba(255,255,255,0.07)" />
+                <ellipse cx="200" cy="40" rx="16" ry="20" fill="rgba(255,255,255,0.09)" />
+                <rect x="178" y="90" width="44" height="14" rx="4" fill="rgba(224,52,42,0.30)" />
+                <rect x="174" y="150" width="52" height="20" rx="3" fill="rgba(255,255,255,0.06)" />
+                <rect x="160" y="168" width="80" height="8" rx="2" fill="rgba(255,255,255,0.05)" />
+                <!-- Stars -->
+                <circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.4)" />
+                <circle cx="100" cy="55" r="1" fill="rgba(255,255,255,0.3)" />
+                <circle cx="320" cy="28" r="1.5" fill="rgba(255,255,255,0.4)" />
+                <circle cx="280" cy="60" r="1" fill="rgba(255,255,255,0.3)" />
+                <circle cx="340" cy="75" r="2" fill="rgba(255,255,255,0.25)" />
+              </svg>
+              <div class="project-img-overlay"></div>
+              <div class="project-img-tag">Active Project</div>
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-icon" aria-hidden="true">🏛️</div>
+              <h3>Statue of Unity — Ekta Nagar, Kevadia</h3>
+              <p>Managing fire and emergency services at India's tallest monument since March 2024 — protecting this
+                iconic national landmark around the clock.</p>
+            </div>
+            <div class="project-card-footer">
+              <span>📍</span> Kevadia, Gujarat &nbsp;·&nbsp; <span>🗓️</span> Since March 2024
+            </div>
+          </article>
+
+          <!-- Coming Soon Cards -->
+          <div class="project-coming-soon reveal reveal-delay-1">
+            <div class="cs-icon" aria-hidden="true">🏭</div>
+            <h4>More Case Studies Coming Soon</h4>
+            <p>Durga Fire protects 40+ active industrial sites. Full project portfolio with client testimonials and
+              outcomes to be published shortly.</p>
+          </div>
+
+          <div class="project-coming-soon reveal reveal-delay-2">
+            <div class="cs-icon" aria-hidden="true">⚗️</div>
+            <h4>GIDC Ankleshwar Operations</h4>
+            <p>Managing 12 GIDC fire stations across Gujarat's largest chemical industrial estate — 35 years of
+              uninterrupted DPMC award-winning service.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+     LOCATIONS STRIP
+════════════════════════════════════════════════════ -->
+    <section id="locations" aria-label="Locations served">
+      <div class="container">
+        <div class="locations-header">
+          <span class="section-tag">Our Footprint</span>
+          <h2 class="section-heading centered">Serving Major Industrial Belts Across Gujarat</h2>
+        </div>
+
+        <div class="locations-pills">
+          <div class="location-pill reveal"><span class="pin" aria-hidden="true">📍</span> Dahej</div>
+          <div class="location-pill reveal reveal-delay-1"><span class="pin" aria-hidden="true">📍</span> Ankleshwar
+          </div>
+          <div class="location-pill reveal reveal-delay-2"><span class="pin" aria-hidden="true">📍</span> Vadodara</div>
+          <div class="location-pill reveal reveal-delay-3"><span class="pin" aria-hidden="true">📍</span> Bharuch</div>
+          <div class="location-pill reveal reveal-delay-4"><span class="pin" aria-hidden="true">📍</span> Surat</div>
+          <div class="location-pill reveal"><span class="pin" aria-hidden="true">📍</span> Kevadia / Ekta Nagar</div>
+          <div class="location-pill reveal reveal-delay-1"><span class="pin" aria-hidden="true">📍</span> Rajkot</div>
+          <div class="location-pill reveal reveal-delay-2"><span class="pin" aria-hidden="true">📍</span> Vapi</div>
+          <div class="location-pill reveal reveal-delay-3"><span class="pin" aria-hidden="true">📍</span> Gandhinagar
+          </div>
+          <div class="location-pill reveal reveal-delay-4"><span class="pin" aria-hidden="true">📍</span> Ahmedabad
+          </div>
+          <div class="location-pill reveal"><span class="pin" aria-hidden="true">📍</span> Halol</div>
+          <div class="location-pill reveal reveal-delay-1"><span class="pin" aria-hidden="true">📍</span> Jambusar</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+     SPLIT CTA BANNER
+════════════════════════════════════════════════════ -->
+    <section id="cta-banner" aria-label="Call to action">
+
+      <!-- Left panel -->
+      <div class="cta-left">
+        <div class="cta-left-bg" aria-hidden="true"
+          style="background: linear-gradient(135deg, #0B1B3D 0%, #1a3a7a 100%);"></div>
+        <div class="cta-left-overlay" aria-hidden="true"></div>
+        <!-- Decorative SVG shield in background -->
+        <svg style="position:absolute;right:0;bottom:0;opacity:0.06;pointer-events:none;" width="300" height="300"
+          viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M150 20 L240 65 L240 150 Q240 230 150 270 Q60 230 60 150 L60 65 Z" fill="white" />
+        </svg>
+        <div class="cta-left-content reveal">
+          <h2>Building Safety Through Experience</h2>
+          <p>For over three decades, industries have trusted Durga Fire for dependable manpower, emergency preparedness,
+            fire station operations, and compliance solutions. We don't just meet the standard — we set it.</p>
+          <a href="about.html" class="btn btn-outline-white">Know More About Us →</a>
+        </div>
+      </div>
+
+      <!-- Right panel -->
+      <div class="cta-right">
+        <div class="cta-right-content reveal">
+          <span class="emergency-icon" aria-hidden="true">🚨</span>
+          <h2>Emergency? We Are Here 24/7</h2>
+          <p>Our emergency response team is always ready to support you. No delays, no answering machines — real people,
+            real response, every time.</p>
+          <a href="tel:+91XXXXXXXXXX" class="cta-phone" id="ctaPhoneBtn" aria-label="Call emergency helpline">
+            📞 24/7 Helpline: +91 XXXXXXXXXX
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+  </main><!-- end #main-content -->
+
+
+  <!-- ════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo" aria-label="Durga Fire Home">
+            <div class="logo-icon" aria-hidden="true">
+              <img src="./assets/logos/logo.webp" alt="Durga Fire Logo">
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">Durga Fire</span>
+              <span class="logo-sub">Safety Consultants</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Protecting Lives. Securing Industries. Serving India Since 1990.<br>
+            Gujarat's most trusted fire safety and emergency response organization.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Facebook">𝑓</a>
+            <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer-social" aria-label="Twitter / X">𝕏</a>
+            <a href="#" class="footer-social" aria-label="YouTube">▶</a>
+            <a href="#" class="footer-social" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <!-- <li><a href="industries.html">Industries</a></li> -->
+            <!-- <li><a href="locations.html">Locations</a></li> -->
+            <!-- <li><a href="resources.html">Resources</a></li> -->
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Services -->
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html#fire-station">Fire Station Management</a></li>
+            <li><a href="services.html#manpower">Trained Fire Manpower</a></li>
+            <li><a href="services.html#medical">Industrial Medical Services</a></li>
+            <li><a href="services.html#training">Fire Safety Training</a></li>
+            <li><a href="services.html#ecc">ECC Operations</a></li>
+            <li><a href="services.html#consulting">Fire Safety Consulting</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Resources -->
+        <!-- <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="resources.html#blog">Blog</a></li>
+            <li><a href="resources.html#safety-tips">Safety Tips</a></li>
+            <li><a href="resources.html#compliance">Compliance Guides</a></li>
+            <li><a href="resources.html#checklist">Fire Safety Checklist</a></li>
+            <li><a href="resources.html#news">News &amp; Updates</a></li>
+          </ul>
+        </div> -->
+
+        <!-- Col 5: Contact -->
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">📍</div>
+            <div class="footer-contact-text">
+              <strong>Office Address</strong>
+              Gujarat, India<br>(Full address to be updated)
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">📞</div>
+            <div class="footer-contact-text">
+              <strong>Phone / Emergency</strong>
+              <a href="tel:+91XXXXXXXXXX" style="color:inherit;">+91 XXXXXXXXXX</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">✉️</div>
+            <div class="footer-contact-text">
+              <strong>Email</strong>
+              <a href="mailto:info@durgafire.com" style="color:inherit;">info@durgafire.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">🕐</div>
+            <div class="footer-contact-text">
+              <strong>Operating Hours</strong>
+              Mon–Sun · 24/7 Emergency Support
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.footer-grid -->
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2026 Durga Fire &amp; Safety Consultants. All Rights Reserved.
+        </p>
+        <nav class="footer-bottom-links" aria-label="Footer legal links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="sitemap.xml">Sitemap</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,681 @@
+/* ==========================================================================
+   Durga Fire & Safety Consultants Design Variables & Base Classes
+   ========================================================================== */
+:root {
+    --primary-navy: #0a1931;
+    /* Dark Corporate Navy */
+    --accent-red: #d32f2f;
+    /* Fire Engine Red */
+    --accent-red-hover: #b71c1c;
+    /* Dark Red for hover state */
+    --pure-white: #ffffff;
+    --light-bg: #f4f6f9;
+    /* Soft off-white */
+    --border-color: #e2e8f0;
+    /* Modern light border */
+    --text-primary: #1e293b;
+    /* Dark charcoal */
+    --text-muted: #64748b;
+    /* Light gray text */
+    --card-shadow: 0 10px 30px -10px rgba(10, 25, 49, 0.08);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    background-color: var(--light-bg);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.global-header {
+    background-color: var(--primary-navy);
+    color: var(--pure-white);
+    padding: 20px 0;
+    border-bottom: 3px solid var(--accent-red);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.logo-bold {
+    font-weight: 800;
+    color: var(--pure-white);
+}
+
+.logo-sub {
+    font-weight: 400;
+    color: var(--accent-red);
+}
+
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+.main-navigation a {
+    color: var(--pure-white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.main-navigation a:hover,
+.main-navigation a.active {
+    color: var(--accent-red);
+}
+
+/* ==========================================================================
+   Page Hero Section
+   ========================================================================== */
+.page-hero {
+    background-color: var(--primary-navy);
+    background-image: linear-gradient(rgba(10, 25, 49, 0.92), rgba(10, 25, 49, 0.95));
+    color: var(--pure-white);
+    padding: 60px 0 80px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.breadcrumb {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent-red);
+}
+
+.breadcrumb .active-crumb {
+    color: var(--pure-white);
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--accent-red);
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hero-supporting {
+    max-width: 800px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   24/7 Emergency Callout Strip
+   ========================================================================== */
+.emergency-strip {
+    background-color: var(--primary-navy);
+    border-top: 4px solid var(--accent-red);
+    border-bottom: 4px solid var(--accent-red);
+    padding: 24px 0;
+    margin-top: -30px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.emergency-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.emergency-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.emergency-badge {
+    background-color: var(--accent-red);
+    color: var(--pure-white);
+    font-weight: 800;
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    animation: pulse-red 2s infinite;
+}
+
+.emergency-text h2 {
+    color: var(--pure-white);
+    margin: 0 0 4px 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.emergency-text p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.emergency-cta-btn {
+    background-color: var(--accent-red);
+    color: var(--pure-white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    padding: 16px 28px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.emergency-cta-btn:hover {
+    background-color: var(--accent-red-hover);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Section Headers (Red Underline System)
+   ========================================================================== */
+.section-header {
+    font-size: 1.85rem;
+    color: var(--primary-navy);
+    position: relative;
+    padding-bottom: 14px;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 4px;
+    background-color: var(--accent-red);
+}
+
+.text-center.section-header::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    margin-top: -15px;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Two-Column Layout Grid
+   ========================================================================== */
+.contact-layout-section {
+    padding: 80px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* White Card Panel Style (Form Container) */
+.contact-card-wrapper {
+    background: var(--pure-white);
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   Contact Form System
+   ========================================================================== */
+.durga-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-navy);
+    margin-bottom: 8px;
+}
+
+.form-group label .required {
+    color: var(--accent-red);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    background-color: var(--pure-white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-red);
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+/* Mobile Input with Locked Prefix Layout */
+.prefix-input-container {
+    display: flex;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.prefix-input-container:focus-within {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+}
+
+.input-prefix {
+    background-color: var(--light-bg);
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 12px 16px;
+    border-right: 1px solid #cbd5e1;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.prefix-input-container input {
+    border: none;
+    border-radius: 0;
+    flex-grow: 1;
+}
+
+.prefix-input-container input:focus {
+    box-shadow: none;
+}
+
+/* Submission Button */
+.btn-primary-red {
+    background-color: var(--accent-red);
+    color: var(--pure-white);
+    border: none;
+    border-radius: 6px;
+    padding: 16px 24px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+}
+
+.btn-primary-red:hover {
+    background-color: var(--accent-red-hover);
+}
+
+.btn-primary-red:active {
+    transform: translateY(1px);
+}
+
+.form-micro-copy {
+    margin: 15px 0 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Quick Contact Tiles (Interactive Mini-Cards)
+   ========================================================================== */
+.contact-tiles-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-tile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--pure-white);
+    padding: 24px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-tile:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-red);
+    box-shadow: 0 15px 35px -5px rgba(211, 47, 47, 0.08);
+}
+
+.tile-icon-wrapper {
+    background-color: var(--light-bg);
+    color: var(--accent-red);
+    font-size: 1.6rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.contact-tile:hover .tile-icon-wrapper {
+    background-color: var(--accent-red);
+    color: var(--pure-white);
+}
+
+/* Green design accent for WhatsApp */
+.whatsapp-tile:hover .tile-icon-wrapper {
+    background-color: #25d366;
+    color: var(--pure-white);
+}
+
+.whatsapp-tile:hover {
+    border-color: #25d366;
+}
+
+.tile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tile-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+}
+
+.tile-detail {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.tile-action {
+    font-size: 0.8rem;
+    color: var(--accent-red);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.whatsapp-tile .tile-action {
+    color: #25d366;
+}
+
+/* ==========================================================================
+   Offices Grid & Maps Section
+   ========================================================================== */
+.offices-map-section {
+    background-color: var(--pure-white);
+    padding: 80px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.offices-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.office-card {
+    background: var(--light-bg);
+    border-radius: 8px;
+    padding: 30px;
+    border: 1px solid var(--border-color);
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.office-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background-color: var(--primary-navy);
+    color: var(--pure-white);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.office-badge.secondary {
+    background-color: var(--accent-red);
+}
+
+.office-card h3 {
+    margin: 0 0 15px 0;
+    color: var(--primary-navy);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.office-address {
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+}
+
+.office-phone {
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+}
+
+.text-link {
+    color: var(--accent-red);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.text-link:hover {
+    color: var(--accent-red-hover);
+    text-decoration: underline;
+}
+
+/* Styled Map Outer Shell */
+.map-embed-container {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    line-height: 0;
+}
+
+/* ==========================================================================
+   Global Footer
+   ========================================================================== */
+.global-footer {
+    background-color: var(--primary-navy);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 40px 0 20px 0;
+    border-top: 4px solid var(--accent-red);
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-info h3 {
+    color: var(--pure-white);
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes pulse-red {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7);
+    }
+
+    70% {
+        transform: scale(1.02);
+        box-shadow: 0 0 0 8px rgba(211, 47, 47, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(211, 47, 47, 0);
+    }
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-contact-column {
+        order: -1;
+        /* Display options above the contact form on tablets for ease of use */
+    }
+
+    .contact-tiles-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .emergency-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .emergency-content {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .emergency-cta-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .form-row-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-tiles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offices-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .office-card {
+        padding-top: 50px;
+    }
+
+    .office-badge {
+        left: 30px;
+        right: auto;
+    }
+}

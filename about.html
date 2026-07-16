@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Durga Fire & Safety Consultants | 35 Years of Fire Safety Excellence</title>
+  <meta name="description"
+    content="Learn about Durga Fire & Safety Consultants — 35+ years protecting industries and communities across Gujarat with 700+ trained fire safety professionals." />
+  <meta name="keywords"
+    content="about Durga Fire, fire safety consultants Gujarat, industrial fire safety company, emergency preparedness India" />
+  <meta property="og:title" content="About Durga Fire & Safety Consultants" />
+  <meta property="og:description"
+    content="35 years of protecting people, industries, and communities across Gujarat." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://www.durgafire.com/about.html" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- ════════════════════════════════════════════════════
+     CONSULTATION FORM MODAL
+════════════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="consultModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">🔴 Free Safety Consultation</h3>
+        <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <form id="consultForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Full Name *</label>
+              <input type="text" id="fname" name="fname" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="company">Company / Organisation *</label>
+              <input type="text" id="company" name="company" placeholder="Company name" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Required</label>
+            <select id="service" name="service">
+              <option value="">— Select a Service —</option>
+              <option>Fire Station Management</option>
+              <option>Trained Fire Manpower Supply</option>
+              <option>Industrial Medical Services</option>
+              <option>Fire Safety Training</option>
+              <option>ECC Operations</option>
+              <option>Fire Safety Consulting</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Brief description of your requirement…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit" id="formSubmit">
+            Send Consultation Request →
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════
+     MOBILE NAV
+════════════════════════════════════════════════════ -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <!-- <a href="industries.html">Industries</a>
+    <a href="locations.html">Locations</a>
+    <a href="careers.html">Careers</a> -->
+    <a href="contact.html">Contact</a>
+    <a href="tel:+91XXXXXXXXXX" class="btn btn-primary" id="mobileEmergencyBtn">
+      📞 Emergency Support 24/7
+    </a>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════════════ -->
+  <header id="header" role="banner">
+    <div class="header-inner">
+
+      <a href="index.html" class="logo" aria-label="Durga Fire Home">
+        <div class="logo-icon" aria-hidden="true">
+          <img src="./assets/logos/Logo.webp" alt="Durga Fire Logo">
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Durga Fire</span>
+          <span class="logo-sub">Safety Consultants</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Us</a>
+
+        <div class="nav-item" id="servicesDropdown">
+          <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="servicesBtn">
+            Services <span class="chevron" aria-hidden="true">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu" aria-label="Services submenu">
+            <a href="services.html#fire-station" role="menuitem"><span class="dm-icon">🚒</span> Fire Station
+              Management</a>
+            <a href="services.html#manpower" role="menuitem"><span class="dm-icon">👷</span> Trained Fire Manpower</a>
+            <a href="services.html#medical" role="menuitem"><span class="dm-icon">🏥</span> Industrial Medical
+              Services</a>
+            <a href="services.html#training" role="menuitem"><span class="dm-icon">🎓</span> Fire Safety Training</a>
+            <a href="services.html#ecc" role="menuitem"><span class="dm-icon">🛡️</span> ECC Operations</a>
+            <a href="services.html#consulting" role="menuitem"><span class="dm-icon">📋</span> Fire Safety
+              Consulting</a>
+          </div>
+        </div>
+
+        <!--    <a href="industries.html">Industries</a>
+        <a href="locations.html">Locations</a>
+        <a href="careers.html">Careers</a>  -->
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:+91XXXXXXXXXX" class="btn btn-primary" id="headerEmergencyBtn">
+          📞 Emergency Support 24/7
+        </a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- ════════════════════════════════════════════════════
+       PAGE HERO
+    ════════════════════════════════════════════════════ -->
+    <section id="page-hero" aria-label="About Us">
+      <div class="page-hero-bg" aria-hidden="true"></div>
+      <div class="page-hero-overlay" aria-hidden="true"></div>
+
+      <div class="page-hero-content container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="breadcrumb-current" aria-current="page">About Us</span>
+        </nav>
+
+        <h1 class="page-hero-heading">
+          About <span class="highlight">Durga Fire &amp; Safety Consultants</span>
+        </h1>
+        <p class="page-hero-sub">35 Years of Protecting People, Industries, and Communities</p>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+       COMPANY OVERVIEW
+    ════════════════════════════════════════════════════ -->
+    <section id="about-intro" aria-label="Company overview">
+      <div class="container">
+        <div class="about-intro-inner reveal">
+          <span class="section-tag">Who We Are</span>
+          <h2 class="section-heading centered">A Trusted Name in Fire &amp; Industrial Safety</h2>
+          <div class="about-intro-text">
+            <p>
+              <strong>Durga Fire &amp; Safety Consultants</strong> is a trusted name in fire protection,
+              industrial safety, emergency preparedness, and fire manpower services.
+            </p>
+            <p>
+              Founded on a legacy of commitment to public safety and industrial protection, we have spent
+              over 35 years helping organizations strengthen their emergency response capabilities and
+              maintain safe working environments.
+            </p>
+            <p>
+              Today, our team of <strong>700+ trained professionals</strong> supports industries,
+              government organizations, commercial establishments, hospitals, and institutions
+              across Gujarat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+       MISSION & VISION
+    ════════════════════════════════════════════════════ -->
+    <section id="mission-vision" aria-label="Mission and vision">
+      <div class="container">
+        <div class="mv-header">
+          <span class="section-tag">What Drives Us</span>
+          <h2 class="section-heading centered">Our Mission &amp; Vision</h2>
+        </div>
+
+        <div class="mv-grid">
+          <article class="mv-card mv-card-navy reveal">
+            <div class="mv-card-icon" aria-hidden="true">🎯</div>
+            <h3>Our Mission</h3>
+            <p>
+              To create safer workplaces and communities through reliable fire safety services,
+              skilled manpower, emergency preparedness, and professional safety consultancy.
+            </p>
+          </article>
+
+          <article class="mv-card mv-card-white reveal reveal-delay-1">
+            <div class="mv-card-icon" aria-hidden="true">🔭</div>
+            <h3>Our Vision</h3>
+            <p>
+              To become Gujarat's most trusted fire safety and emergency response partner
+              for industries and institutions.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+       OUR STRENGTHS
+    ════════════════════════════════════════════════════ -->
+    <section id="our-strengths" aria-label="Our strengths">
+      <div class="container">
+        <div class="why-choose-header">
+          <span class="section-tag">Why We Stand Out</span>
+          <h2 class="section-heading centered">Our Strengths</h2>
+        </div>
+
+        <div class="strengths-grid">
+          <article class="strength-tile reveal">
+            <div class="strength-icon" aria-hidden="true">🏆</div>
+            <h3>35+ Years Experience</h3>
+          </article>
+
+          <article class="strength-tile reveal reveal-delay-1">
+            <div class="strength-icon" aria-hidden="true">👥</div>
+            <h3>700+ Trained Workforce</h3>
+          </article>
+
+          <article class="strength-tile reveal reveal-delay-2">
+            <div class="strength-icon" aria-hidden="true">🏭</div>
+            <h3>Industrial Fire Safety Expertise</h3>
+          </article>
+
+          <article class="strength-tile reveal reveal-delay-1">
+            <div class="strength-icon" aria-hidden="true">🚨</div>
+            <h3>Emergency Response Readiness</h3>
+          </article>
+
+          <article class="strength-tile reveal reveal-delay-2">
+            <div class="strength-icon" aria-hidden="true">📍</div>
+            <h3>Regional Presence Across Gujarat</h3>
+          </article>
+
+          <article class="strength-tile reveal reveal-delay-3">
+            <div class="strength-icon" aria-hidden="true">📋</div>
+            <h3>Compliance-Oriented Solutions</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════════════════════════
+       CLOSING CTA
+    ════════════════════════════════════════════════════ -->
+    <section id="about-cta" aria-label="Get in touch">
+      <div class="about-cta-bg" aria-hidden="true"></div>
+      <div class="about-cta-overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="about-cta-inner reveal">
+          <h2>Partner With a Team That Takes Safety Seriously</h2>
+          <p>
+            Whether you need fire station management, trained manpower, or a full safety audit —
+            our team is ready to help you build a safer workplace.
+          </p>
+          <div class="about-cta-btns">
+            <button class="btn btn-primary" id="aboutConsultBtn">
+              Request a Consultation
+            </button>
+            <a href="contact.html" class="btn btn-outline-white">
+              Contact Our Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-brand">
+          <a href="index.html" class="logo" aria-label="Durga Fire Home">
+            <div class="logo-icon" aria-hidden="true">
+              <img src="./assets/logos/Logo.webp" alt="Durga Fire Logo">
+            </div>
+            <div class="logo-text">
+              <span class="logo-name">Durga Fire</span>
+              <span class="logo-sub">Safety Consultants</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Protecting Lives. Securing Industries. Serving India Since 1990.<br>
+            Gujarat's most trusted fire safety and emergency response organization.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Facebook">𝑓</a>
+            <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+            <a href="#" class="footer-social" aria-label="Twitter / X">𝕏</a>
+            <a href="#" class="footer-social" aria-label="YouTube">▶</a>
+            <a href="#" class="footer-social" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="services.html#fire-station">Fire Station Management</a></li>
+            <li><a href="services.html#manpower">Trained Fire Manpower</a></li>
+            <li><a href="services.html#medical">Industrial Medical Services</a></li>
+            <li><a href="services.html#training">Fire Safety Training</a></li>
+            <li><a href="services.html#ecc">ECC Operations</a></li>
+            <li><a href="services.html#consulting">Fire Safety Consulting</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">📍</div>
+            <div class="footer-contact-text">
+              <strong>Office Address</strong>
+              Gujarat, India<br>(Full address to be updated)
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">📞</div>
+            <div class="footer-contact-text">
+              <strong>Phone / Emergency</strong>
+              <a href="tel:+91XXXXXXXXXX" style="color:inherit;">+91 XXXXXXXXXX</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">✉️</div>
+            <div class="footer-contact-text">
+              <strong>Email</strong>
+              <a href="mailto:info@durgafire.com" style="color:inherit;">info@durgafire.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon" aria-hidden="true">🕐</div>
+            <div class="footer-contact-text">
+              <strong>Operating Hours</strong>
+              Mon–Sun · 24/7 Emergency Support
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2026 Durga Fire &amp; Safety Consultants. All Rights Reserved.
+        </p>
+        <nav class="footer-bottom-links" aria-label="Footer legal links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="sitemap.xml">Sitemap</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Durga Fire & Safety Consultants</title>
+    <!-- Link to Google Fonts for professional corporate typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to your global stylesheet containing header/footer/layout styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════════════════
+     GLOBAL HEADER (Integrated from index.html)
+  ════════════════════════════════════════════════════ -->
+    <header id="header" role="banner">
+        <div class="header-inner">
+
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Durga Fire Home">
+                <div class="logo-icon" aria-hidden="true">
+                    <img src="./assets/logos/logo.webp" alt="Durga Fire Logo">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">Durga Fire</span>
+                    <span class="logo-sub">Safety Consultants</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-menu" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+
+                <!-- Services Dropdown -->
+                <div class="nav-item" id="servicesDropdown">
+                    <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false" id="servicesBtn">
+                        Services <span class="chevron" aria-hidden="true">▾</span>
+                    </button>
+                    <div class="dropdown-menu" role="menu" aria-label="Services submenu">
+                        <a href="services.html#fire-station" role="menuitem"><span class="dm-icon">🚒</span> Fire
+                            Station Management</a>
+                        <a href="services.html#manpower" role="menuitem"><span class="dm-icon">👷</span> Trained Fire
+                            Manpower</a>
+                        <a href="services.html#medical" role="menuitem"><span class="dm-icon">🏥</span> Industrial
+                            Medical Services</a>
+                        <a href="services.html#training" role="menuitem"><span class="dm-icon">🎓</span> Fire Safety
+                            Training</a>
+                        <a href="services.html#ecc" role="menuitem"><span class="dm-icon">🛡️</span> ECC Operations</a>
+                        <a href="services.html#consulting" role="menuitem"><span class="dm-icon">📋</span> Fire Safety
+                            Consulting</a>
+                    </div>
+                </div>
+
+                <!--   <a href="industries.html">Industries</a>
+                <a href="locations.html">Locations</a> -->
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ════════════════════════════════════════════════════
+       1. PAGE HERO (Sub-page treatment matching PRD)
+    ════════════════════════════════════════════════════ -->
+        <section class="page-hero">
+            <div class="container">
+
+                <h1 class="hero-title">Contact Durga Fire & Safety Consultants</h1>
+                <p class="hero-subtitle">Need expert fire safety support?</p>
+                <p class="hero-supporting">Our team is ready to assist your organization with consultancy, manpower
+                    deployment, training, and emergency preparedness solutions.</p>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════
+       2. EMERGENCY CALLOUT STRIP (High accessibility placement)
+    ════════════════════════════════════════════════════ -->
+        <section class="emergency-strip">
+            <div class="container emergency-container">
+                <div class="emergency-content">
+                    <div class="emergency-badge">🔴 EMERGENCY</div>
+                    <div class="emergency-text">
+                        <h2>Emergency? We Are Here 24/7</h2>
+                        <p>Our emergency response team is always ready to support you. No delays, immediate deployment.
+                        </p>
+                    </div>
+                </div>
+                <a href="tel:+91XXXXXXXXXX" class="emergency-cta-btn">
+                    <span class="phone-icon">📞</span> 24/7 Helpline: +91 XXXXXXXXXX
+                </a>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════
+       3. MAIN CONTENT: TWO-COLUMN SPLIT LAYOUT
+    ════════════════════════════════════════════════════ -->
+        <section class="contact-layout-section">
+            <div class="container contact-grid">
+
+                <!-- Left Column: White Card Submission Form -->
+                <div class="contact-card-wrapper form-column">
+                    <h2 class="section-header">Request Consultation</h2>
+
+                    <form action="#" method="POST" class="durga-contact-form">
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="name">Your Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company Name <span class="required">*</span></label>
+                                <input type="text" id="company" name="company" required
+                                    placeholder="Enter organization name">
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="location">Your City / Location <span class="required">*</span></label>
+                                <input type="text" id="location" name="location" required
+                                    placeholder="e.g., Dahej, Ankleshwar, Vadodara">
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number <span class="required">*</span></label>
+                                <div class="prefix-input-container">
+                                    <span class="input-prefix">+91</span>
+                                    <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}"
+                                        placeholder="XXXXXXXXXX" title="Please enter a valid 10-digit mobile number">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="name@company.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Required <span class="required">*</span></label>
+                                <select id="service" name="service" required>
+                                    <option value="" disabled selected>Select service type...</option>
+                                    <option value="fire-station-mgmt">Fire Station Management</option>
+                                    <option value="manpower-supply">Trained Fire Manpower Supply</option>
+                                    <option value="medical-services">Industrial Medical Services</option>
+                                    <option value="safety-training">Fire Safety Training</option>
+                                    <option value="ecc-ops">ECC Operations</option>
+                                    <option value="safety-consulting">Fire Safety Consulting</option>
+                                    <option value="other">Other / General Support</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Detailed Message</label>
+                            <textarea id="message" name="message" rows="5"
+                                placeholder="Tell us about your organization's specific requirements..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary-red">Request Consultation</button>
+
+                        <p class="form-micro-copy">
+                            ℹ️ We typically respond within 24 hours. For emergencies, please call our 24/7 helpline
+                            directly.
+                        </p>
+                    </form>
+                </div>
+
+                <!-- Right Column: Quick Contact Options (Interactive Icon Cards) -->
+                <div class="quick-contact-column">
+                    <h2 class="section-header">Quick Contact</h2>
+
+                    <div class="contact-tiles-grid">
+                        <!-- Call Us Tile -->
+                        <a href="tel:+91XXXXXXXXXX" class="contact-tile">
+                            <div class="tile-icon-wrapper">📞</div>
+                            <div class="tile-info">
+                                <h3>Call Us</h3>
+                                <p class="tile-detail">+91 XXXXXXXXXX</p>
+                                <span class="tile-action">Tap to call &rarr;</span>
+                            </div>
+                        </a>
+
+                        <!-- WhatsApp Us Tile -->
+                        <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20Durga%20Fire%20Safety,%20I'd%20like%20to%20inquire%20about%20your%20services."
+                            target="_blank" rel="noopener" class="contact-tile whatsapp-tile">
+                            <div class="tile-icon-wrapper">💬</div>
+                            <div class="tile-info">
+                                <h3>WhatsApp Us</h3>
+                                <p class="tile-detail">Instant Chat Link</p>
+                                <span class="tile-action">Open WhatsApp &rarr;</span>
+                            </div>
+                        </a>
+
+                        <!-- Email Us Tile -->
+                        <a href="mailto:info@durgafire.com" class="contact-tile">
+                            <div class="tile-icon-wrapper">📧</div>
+                            <div class="tile-info">
+                                <h3>Email Us</h3>
+                                <p class="tile-detail">info@durgafire.com</p>
+                                <span class="tile-action">Send email &rarr;</span>
+                            </div>
+                        </a>
+
+                        <!-- Visit Office Tile -->
+                        <a href="https://maps.google.com/?q=Durga+Fire+Safety+Consultants" target="_blank"
+                            rel="noopener" class="contact-tile">
+                            <div class="tile-icon-wrapper">📍</div>
+                            <div class="tile-info">
+                                <h3>Visit Our Office</h3>
+                                <p class="tile-detail">Registered Office Address, Gujarat, India</p>
+                                <span class="tile-action">Get directions &rarr;</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════
+       4. MAP & ADMINISTRATIVE LOCATIONS SECTION
+    ════════════════════════════════════════════════════ -->
+        <section class="offices-map-section">
+            <div class="container">
+                <h2 class="section-header text-center">Our Offices & Presence</h2>
+                <p class="section-subtitle text-center">Headquartered in Gujarat, servicing major industrial belts
+                    across the region.</p>
+
+                <div class="offices-grid">
+                    <!-- Administrative Office Card -->
+                    <div class="office-card">
+                        <div class="office-badge">Registered Office</div>
+                        <h3>Durga Fire Head Office</h3>
+                        <p class="office-address">
+                            101-104 Corporate Plaza, Sector 8, GIDC Industrial Estate,<br>
+                            Gandhidham, Kutch, Gujarat - 370201
+                        </p>
+                        <p class="office-phone"><strong>Tel:</strong> +91 XXXXXXXXXX</p>
+                        <a href="https://maps.google.com/?q=Gandhidham" target="_blank" rel="noopener"
+                            class="text-link">View Map Location &rarr;</a>
+                    </div>
+
+                    <!-- Regional Office Card -->
+                    <div class="office-card">
+                        <div class="office-badge secondary">Regional Office</div>
+                        <h3>Regional Operations Hub</h3>
+                        <p class="office-address">
+                            Plot No. 45/B, Phase II, GIDC Chemical Zone,<br>
+                            Ankleshwar, Bharuch, Gujarat - 393002
+                        </p>
+                        <p class="office-phone"><strong>Tel:</strong> +91 XXXXXXXXXX</p>
+                        <a href="https://maps.google.com/?q=Ankleshwar" target="_blank" rel="noopener"
+                            class="text-link">View Map Location &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Styled Map Container -->
+                <div class="map-embed-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.1235489721054!2d70.1332453!3d23.0832454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA0JzU5LjciTiA3MMKwMDgnMDAuNyJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main><!-- end #main-content -->
+
+    <!-- ════════════════════════════════════════════════════
+     GLOBAL FOOTER (Integrated from index.html)
+  ════════════════════════════════════════════════════ -->
+    <footer id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Col 1: Brand -->
+                <div class="footer-col footer-brand">
+                    <a href="index.html" class="logo" aria-label="Durga Fire Home">
+                        <div class="logo-icon" aria-hidden="true">
+                            <img src="./assets/logos/logo.webp" alt="Durga Fire Logo">
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-name">Durga Fire</span>
+                            <span class="logo-sub">Safety Consultants</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">
+                        Protecting Lives. Securing Industries. Serving India Since 1990.<br>
+                        Gujarat's most trusted fire safety and emergency response organization.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="footer-social" aria-label="Facebook">𝑓</a>
+                        <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+                        <a href="#" class="footer-social" aria-label="Twitter / X">𝕏</a>
+                        <a href="#" class="footer-social" aria-label="YouTube">▶</a>
+                        <a href="#" class="footer-social" aria-label="WhatsApp">💬</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html#fire-station">Fire Station Management</a></li>
+                        <li><a href="services.html#manpower">Trained Fire Manpower</a></li>
+                        <li><a href="services.html#medical">Industrial Medical Services</a></li>
+                        <li><a href="services.html#training">Fire Safety Training</a></li>
+                        <li><a href="services.html#ecc">ECC Operations</a></li>
+                        <li><a href="services.html#consulting">Fire Safety Consulting</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Contact Info -->
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon" aria-hidden="true">📍</div>
+                        <div class="footer-contact-text">
+                            <strong>Office Address</strong>
+                            Gujarat, India<br>(Full address to be updated)
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon" aria-hidden="true">📞</div>
+                        <div class="footer-contact-text">
+                            <strong>Phone / Emergency</strong>
+                            <a href="tel:+91XXXXXXXXXX" style="color:inherit;">+91 XXXXXXXXXX</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon" aria-hidden="true">✉️</div>
+                        <div class="footer-contact-text">
+                            <strong>Email</strong>
+                            <a href="mailto:info@durgafire.com" style="color:inherit;">info@durgafire.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon" aria-hidden="true">🕐</div>
+                        <div class="footer-contact-text">
+                            <strong>Operating Hours</strong>
+                            Mon–Sun · 24/7 Emergency Support
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.footer-grid -->
+
+            <!-- Footer Bottom Bar -->
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    &copy; 2026 Durga Fire &amp; Safety Consultants. All Rights Reserved.
+                </p>
+                <nav class="footer-bottom-links" aria-label="Footer legal links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms &amp; Conditions</a>
+                    <a href="sitemap.xml">Sitemap</a>
+                </nav>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

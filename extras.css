@@ -1,0 +1,140 @@
+/* ================================================================
+   ADDITIONAL STYLES — Hero Particles + SVG Flame + Enhancements
+   (appended to styles.css via separate inline styles block)
+================================================================ */
+
+/* Hero particle canvas (JS-driven) */
+#heroParticles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatUp linear infinite;
+  opacity: 0;
+}
+@keyframes floatUp {
+  0%   { opacity: 0; transform: translateY(0) scale(0.5); }
+  15%  { opacity: 0.7; }
+  85%  { opacity: 0.4; }
+  100% { opacity: 0; transform: translateY(-100vh) scale(0.2); }
+}
+
+/* Shimmer effect on trust bar */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* Industries grid — 5+5 for 10 items */
+.industries-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* Sticky header top progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--red-light));
+  z-index: 2000;
+  transition: width 0.1s linear;
+  width: 0%;
+}
+
+/* Back to top button */
+#backToTop {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 46px;
+  height: 46px;
+  background: var(--red);
+  color: var(--white);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(224,52,42,0.40);
+  transition: all var(--transition);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  z-index: 900;
+  border: none;
+}
+#backToTop.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+#backToTop:hover {
+  background: var(--red-dark);
+  transform: translateY(-3px);
+}
+
+/* Cookie banner */
+#cookieBanner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--navy-dark);
+  border-top: 2px solid rgba(224,52,42,0.30);
+  padding: 16px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 1500;
+  transform: translateY(100%);
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+#cookieBanner.show { transform: translateY(0); }
+#cookieBanner p { font-size: 0.84rem; color: rgba(255,255,255,0.70); flex: 1; min-width: 240px; }
+#cookieBanner p a { color: var(--red); }
+.cookie-btns { display: flex; gap: 10px; }
+
+/* Form success state */
+.form-success {
+  text-align: center;
+  padding: 40px 20px;
+}
+.form-success .success-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  display: block;
+}
+.form-success h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.form-success p { color: var(--gray-600); font-size: 0.9rem; line-height: 1.7; }
+
+/* Active nav link */
+.nav-menu a.active-scroll {
+  color: var(--red) !important;
+}
+
+/* Hover state for industry items with color */
+.industry-item:nth-child(1):hover .industry-icon { background: rgba(224,52,42,0.20); }
+.industry-item:nth-child(2):hover .industry-icon { background: rgba(52,116,224,0.20); }
+
+/* Smooth transition for numbers count-up */
+@keyframes countUp {
+  from { transform: translateY(8px); opacity:0; }
+  to   { transform: translateY(0); opacity:1; }
+}
