@@ -64,7 +64,7 @@ function initScrollProgress() {
 
   window.addEventListener('scroll', () => {
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    const scrolled   = window.scrollY;
+    const scrolled = window.scrollY;
     const pct = scrollable > 0 ? (scrolled / scrollable) * 100 : 0;
     bar.style.width = pct + '%';
   }, { passive: true });
@@ -74,8 +74,8 @@ function initScrollProgress() {
    MOBILE NAV
 ════════════════════════════════════════════════════ */
 function initMobileNav() {
-  const hamburger   = document.getElementById('hamburger');
-  const mobileNav   = document.getElementById('mobileNav');
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
   const mobileClose = document.getElementById('mobileNavClose');
   if (!hamburger || !mobileNav) return;
 
@@ -113,7 +113,7 @@ function initDropdowns() {
 
   items.forEach(item => {
     const trigger = item.querySelector('.dropdown-trigger');
-    const menu    = item.querySelector('.dropdown-menu');
+    const menu = item.querySelector('.dropdown-menu');
     if (!trigger || !menu) return;
 
     const open = () => {
@@ -185,9 +185,9 @@ function initCounters() {
     const start = performance.now();
 
     const update = (now) => {
-      const elapsed  = now - start;
+      const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const value    = Math.floor(easeOutCubic(progress) * target);
+      const value = Math.floor(easeOutCubic(progress) * target);
       el.textContent = value.toLocaleString();
       if (progress < 1) requestAnimationFrame(update);
       else el.textContent = target.toLocaleString();
@@ -229,10 +229,10 @@ function initHeroParticles() {
     const p = document.createElement('div');
     p.className = 'particle';
 
-    const size  = Math.random() * 7 + 3;   // 3–10px
-    const left  = Math.random() * 100;      // % from left
+    const size = Math.random() * 7 + 3;   // 3–10px
+    const left = Math.random() * 100;      // % from left
     const delay = Math.random() * 12;       // s delay
-    const dur   = Math.random() * 10 + 8;  // 8–18s duration
+    const dur = Math.random() * 10 + 8;  // 8–18s duration
     const color = colors[Math.floor(Math.random() * colors.length)];
 
     p.style.cssText = `
@@ -253,12 +253,13 @@ function initHeroParticles() {
    CONSULTATION MODAL
 ════════════════════════════════════════════════════ */
 function initConsultModal() {
-  const overlay   = document.getElementById('consultModal');
-  const closeBtn  = document.getElementById('modalClose');
-  const form      = document.getElementById('consultForm');
-  const openBtns  = [
+  const overlay = document.getElementById('consultModal');
+  const closeBtn = document.getElementById('modalClose');
+  const form = document.getElementById('consultForm');
+  const openBtns = [
     document.getElementById('heroConsultBtn'),
     document.getElementById('aboutConsultBtn'),
+    document.getElementById('service-consult-btn')
   ];
 
   if (!overlay) return;
@@ -294,10 +295,10 @@ function initConsultModal() {
     const submitBtn = document.getElementById('formSubmit');
 
     // Basic validation
-    const name    = document.getElementById('fname')?.value.trim();
+    const name = document.getElementById('fname')?.value.trim();
     const company = document.getElementById('company')?.value.trim();
-    const phone   = document.getElementById('phone')?.value.trim();
-    const email   = document.getElementById('email')?.value.trim();
+    const phone = document.getElementById('phone')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
 
     if (!name || !company || !phone || !email) {
       showFormError('Please fill in all required fields.');
@@ -433,3 +434,45 @@ function initCookieBanner() {
     });
   }, { passive: true });
 })();
+
+
+// ==========================================================================
+// DURGA FIRE & SAFETY - GLOBAL SCRIPTS
+// ==========================================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // --- Consultation Modal Logic ---
+  const modal = document.getElementById('consultModal');
+  const openBtn = document.getElementById('openConsultModal');
+  const closeBtn = document.getElementById('modalClose');
+
+  // 1. Open Modal when button is clicked
+  if (openBtn && modal) {
+    openBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.add('active');
+      // Prevent background page from scrolling while modal is open
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  // 2. Close Modal when 'X' is clicked
+  if (closeBtn && modal) {
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      // Restore background scrolling
+      document.body.style.overflow = 'auto';
+    });
+  }
+
+  // 3. Close Modal when clicking on the dark overlay (outside the white box)
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  }
+});

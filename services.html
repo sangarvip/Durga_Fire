@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Durga Fire & Safety Consultants</title>
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to your global stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- ════════════════════════════════════════════════════
+       CONSULTATION FORM MODAL
+  ════════════════════════════════════════════════════ -->
+    <div class="modal-overlay" id="consultModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">🔴 Free Safety Consultation</h3>
+                <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="consultForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fname">Full Name *</label>
+                            <input type="text" id="fname" name="fname" placeholder="Your full name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company / Organisation *</label>
+                            <input type="text" id="company" name="company" placeholder="Company name" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="you@company.com" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Required</label>
+                        <select id="service" name="service">
+                            <option value="">— Select a Service —</option>
+                            <option>Fire Station Management</option>
+                            <option>Trained Fire Manpower Supply</option>
+                            <option>Industrial Medical Services</option>
+                            <option>Fire Safety Training</option>
+                            <option>ECC Operations</option>
+                            <option>Fire Safety Consulting</option>
+                            <option>Other Services</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message"
+                            placeholder="Brief description of your requirement…"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary form-submit" id="formSubmit">
+                        Send Consultation Request →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════
+     GLOBAL HEADER
+  ════════════════════════════════════════════════════ -->
+    <header id="header" role="banner">
+        <div class="header-inner">
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Durga Fire Home">
+                <div class="logo-icon" aria-hidden="true">
+                    <img src="./assets/logos/logo.webp" alt="Durga Fire Logo">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-name">Durga Fire</span>
+                    <span class="logo-sub">Safety Consultants</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="nav-menu" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html" class="active">Services</a>
+
+
+                <!-- Services Dropdown 
+                <div class="nav-item" id="servicesDropdown">
+                    <button class="dropdown-trigger active" aria-haspopup="true" aria-expanded="false" id="servicesBtn">
+                        Services <span class="chevron" aria-hidden="true">▾</span>
+                    </button>
+                    <div class="dropdown-menu" role="menu" aria-label="Services submenu">
+                        <a href="services.html#fire-station" role="menuitem"><span class="dm-icon">🚒</span> Fire
+                            Station Management</a>
+                        <a href="services.html#manpower" role="menuitem"><span class="dm-icon">👷</span> Trained Fire
+                            Manpower</a>
+                        <a href="services.html#medical" role="menuitem"><span class="dm-icon">🏥</span> Industrial
+                            Medical Services</a>
+                        <a href="services.html#training" role="menuitem"><span class="dm-icon">🎓</span> Fire Safety
+                            Training</a>
+                        <a href="services.html#ecc" role="menuitem"><span class="dm-icon">🛡️</span> ECC Operations</a>
+                        <a href="services.html#consulting" role="menuitem"><span class="dm-icon">📋</span> Fire Safety
+                            Consulting</a>
+                    </div>
+                </div>
+
+                <a href="industries.html">Industries</a>
+                <a href="locations.html">Locations</a>     -->
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- ════════════════════════════════════════════════════
+       1. PAGE HERO
+    ════════════════════════════════════════════════════ -->
+
+        <section class="page-hero">
+            <div class="container text-center">
+                <h1 class="hero-title">Our Fire Safety Services</h1>
+                <p class="hero-subtitle">Complete fire protection, manpower, and emergency preparedness solutions for
+                    India's most demanding industries.</p>
+                <button id="service-consult-btn" class="btn-primary-red hero-btn">
+                    🔴 Get a Free Safety Consultation
+                </button>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════
+       2. STICKY SUB-NAVIGATION
+    ════════════════════════════════════════════════════ -->
+        <nav class="sticky-subnav" aria-label="Services Page Anchor Navigation">
+            <div class="container subnav-container">
+                <ul class="subnav-list">
+                    <li><a href="#consulting">Fire Safety Consultancy</a></li>
+                    <li><a href="#manpower">Fire Manpower Supply</a></li>
+                    <li><a href="#officer">Fire Officer Deployment</a></li>
+                    <li><a href="#fire-station">Fire Station Management</a></li>
+                    <li><a href="#training">Mock Drills & Training</a></li>
+                    <li><a href="#industrial">Industrial Fire Safety</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- ════════════════════════════════════════════════════
+       3. SERVICES CONTENT SECTIONS
+    ════════════════════════════════════════════════════ -->
+
+        <!-- ① Fire Safety Consultancy (White Bg) -->
+        <section id="consulting" class="service-section bg-white">
+            <div class="container">
+                <div class="service-header-row">
+                    <div class="service-icon">📋</div>
+                    <h2 class="section-header">Professional Fire Safety Consultancy Services</h2>
+                </div>
+
+                <p class="service-intro-tag">Fire safety is not just compliance—it's preparedness.</p>
+                <p class="service-overview">Durga Fire helps organizations identify risks, improve safety systems, and
+                    create emergency-ready workplaces.</p>
+
+                <div class="service-grid">
+                    <div class="service-main-list">
+                        <h3>Services Include:</h3>
+                        <ul class="two-col-list">
+                            <li>Fire Safety Audits</li>
+                            <li>Risk Assessments</li>
+                            <li>Safety Compliance Support</li>
+                            <li>Emergency Response Planning</li>
+                            <li>Fire Protection Recommendations</li>
+                            <li>Fire Safety Documentation</li>
+                            <li>Regulatory Guidance</li>
+                            <li>Safety Program Development</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefit-list">
+                        <h3>Benefits:</h3>
+                        <ul class="check-list">
+                            <li>✔ Reduced Risk</li>
+                            <li>✔ Improved Compliance</li>
+                            <li>✔ Better Emergency Preparedness</li>
+                            <li>✔ Enhanced Workplace Safety</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="contact.html" class="mini-cta">Need this service? Contact us &rarr;</a>
+            </div>
+        </section>
+
+        <!-- ② Fire Manpower Supply (Light Bg) -->
+        <section id="manpower" class="service-section bg-light">
+            <div class="container">
+                <div class="service-header-row">
+                    <div class="service-icon">👷</div>
+                    <h2 class="section-header">Skilled Fire & Safety Manpower Solutions</h2>
+                </div>
+
+                <p class="service-intro-tag">Providing trained personnel for industrial, commercial, and institutional
+                    operations.</p>
+
+                <div class="service-grid">
+                    <div class="service-main-list">
+                        <h3>Available Personnel:</h3>
+                        <ul class="two-col-list">
+                            <li>Fire Officers</li>
+                            <li>Safety Officers</li>
+                            <li>Fire Supervisors</li>
+                            <li>Firemen</li>
+                            <li>Control Room Operators</li>
+                            <li>Emergency Response Team Members</li>
+                            <li>Safety Stewards</li>
+                            <li>Medical Support Personnel</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefit-list">
+                        <h3>Why Choose Our Manpower:</h3>
+                        <ul class="check-list">
+                            <li>✔ Professionally Trained</li>
+                            <li>✔ Deployment Ready</li>
+                            <li>✔ Industry Experienced</li>
+                            <li>✔ Compliance Focused</li>
+                            <li>✔ Available Across Gujarat</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="contact.html" class="mini-cta">Need this service? Contact us &rarr;</a>
+            </div>
+        </section>
+
+        <!-- ③ Fire Officer Deployment (White Bg) -->
+        <section id="officer" class="service-section bg-white">
+            <div class="container">
+                <div class="service-header-row">
+                    <div class="service-icon">👨‍🚒</div>
+                    <h2 class="section-header">Professional Fire Officer Deployment Services</h2>
+                </div>
+
+                <p class="service-overview">Our experienced fire officers help organizations maintain safety standards,
+                    emergency readiness, and compliance requirements.</p>
+
+                <div class="service-grid">
+                    <div class="service-main-list">
+                        <h3>Responsibilities:</h3>
+                        <ul class="two-col-list">
+                            <li>Fire Prevention Monitoring</li>
+                            <li>Safety Inspections</li>
+                            <li>Emergency Response Coordination</li>
+                            <li>Training & Awareness Programs</li>
+                            <li>Compliance Management</li>
+                            <li>Incident Investigation Support</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefit-list">
+                        <h3>Outcomes:</h3>
+                        <ul class="check-list">
+                            <li>✔ Certified Experts</li>
+                            <li>✔ Proactive Hazard Mitigation</li>
+                            <li>✔ Ensure 24/7 Compliance</li>
+                            <li>✔ Rapid Incident Command</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="contact.html" class="mini-cta">Need this service? Contact us &rarr;</a>
+            </div>
+        </section>
+
+        <!-- ④ Fire Station Management (Light Bg) -->
+        <section id="fire-station" class="service-section bg-light">
+            <div class="container">
+                <div class="service-header-row">
+                    <div class="service-icon">🚒</div>
+                    <h2 class="section-header">Complete Fire Station Operations Management</h2>
+                </div>
+
+                <p class="service-intro-tag">Managing industrial fire stations requires expertise, discipline, and
+                    readiness.</p>
+                <p class="service-overview">Durga Fire offers complete fire station management services for industrial
+                    facilities, ensuring peak readiness around the clock.</p>
+
+                <div class="service-grid">
+                    <div class="service-main-list">
+                        <h3>Services Include:</h3>
+                        <ul class="two-col-list">
+                            <li>Staffing & Deployment</li>
+                            <li>Equipment Management</li>
+                            <li>Emergency Preparedness</li>
+                            <li>Fire Vehicle Operations</li>
+                            <li>Documentation & Reporting</li>
+                            <li>Drill Management</li>
+                            <li>Training Programs</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefit-list">
+                        <h3>Why Choose Us:</h3>
+                        <ul class="check-list">
+                            <li>✔ Turnkey Operations</li>
+                            <li>✔ Optimized Resource Allocation</li>
+                            <li>✔ Zero Readiness Downtime</li>
+                            <li>✔ Complete Asset Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="contact.html" class="mini-cta">Need this service? Contact us &rarr;</a>
+            </div>
+        </section>
+
+        <!-- ⑤ Mock Drills & Emergency Training (White Bg) -->
+        <section id="training" class="service-section bg-white">
+            <div class="container">
+                <div class="service-header-row">
+                    <div class="service-icon">🎓</div>
+                    <h2 class="section-header">Emergency Preparedness Starts With Training</h2>
+                </div>
+
+                <p class="service-overview">We conduct realistic emergency drills and training programs to ensure
+                    workforce readiness during emergencies.</p>
+
+                <div class="service-grid">
+                    <div class="service-main-list">
+                        <h3>Training Programs:</h3>
+                        <ul class="two-col-list">
+                            <li>Fire Fighting Training</li>
+                            <li>Mock Fire Drills</li>
+                            <li>Evacuation Exercises</li>
+                            <li>Emergency Response Training</li>
+                            <li>First Response Programs</li>
+                            <li>Safety Awareness Sessions</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefit-list">
+                        <h3>Outcomes:</h3>
+                        <ul class="check-list">
+                            <li>✔ Faster Response Time</li>
+                            <li>✔ Improved Coordination</li>
+                            <li>✔ Better Emergency Preparedness</li>
+                            <li>✔ Regulatory Compliance</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="contact.html" class="mini-cta">Need this service? Contact us &rarr;</a>
+            </div>
+        </section>
+
+        <!-- ⑥ Industrial Fire Safety Services (Light Bg) -->
+        <section id="industrial" class="service-section bg-light">
+            <div class="container">
+                <div class="service-header-row">
+                    <div class="service-icon">🏭</div>
+                    <h2 class="section-header">Comprehensive Industrial Fire Safety Solutions</h2>
+                </div>
+
+                <p class="service-intro-tag">Designed specifically for chemical plants, manufacturing units, warehouses,
+                    pharmaceutical facilities, and industrial parks.</p>
+
+                <div class="service-grid">
+                    <div class="service-main-list">
+                        <h3>Solutions Include:</h3>
+                        <ul class="two-col-list">
+                            <li>Industrial Risk Assessment</li>
+                            <li>Fire Protection Planning</li>
+                            <li>Fire Safety Audits</li>
+                            <li>Emergency Response Systems</li>
+                            <li>Fire Station Operations</li>
+                            <li>Manpower Deployment</li>
+                            <li>Compliance Support</li>
+                        </ul>
+                    </div>
+                    <div class="service-benefit-list">
+                        <h3>Benefits:</h3>
+                        <ul class="check-list">
+                            <li>✔ Tailored Hazard Control</li>
+                            <li>✔ Plant-Wide Readiness</li>
+                            <li>✔ Regulatory Peace of Mind</li>
+                            <li>✔ Scalable Safety Frameworks</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="contact.html" class="mini-cta">Need this service? Contact us &rarr;</a>
+            </div>
+        </section>
+
+        <!-- ════════════════════════════════════════════════════
+       4. SPLIT CTA BANNER (Global Component)
+    ════════════════════════════════════════════════════ -->
+        <section id="cta-banner" aria-label="Call to action">
+            <div class="cta-left">
+                <div class="cta-left-bg" aria-hidden="true"></div>
+                <div class="cta-left-overlay" aria-hidden="true"></div>
+
+                <svg style="position:absolute;right:0;bottom:0;opacity:0.06;pointer-events:none;z-index:3;" width="300"
+                    height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path d="M150 20 L240 65 L240 150 Q240 230 150 270 Q60 230 60 150 L60 65 Z" fill="white" />
+                </svg>
+
+                <div class="cta-left-content">
+                    <h2>Building Safety Through Experience</h2>
+                    <p>For over three decades, industries have trusted Durga Fire for dependable manpower, emergency
+                        preparedness, fire station operations, and compliance solutions.</p>
+                    <a href="about.html" class="btn btn-outline-white">Know More About Us →</a>
+                </div>
+            </div>
+
+            <div class="cta-right">
+                <div class="cta-right-content">
+                    <span class="emergency-icon" aria-hidden="true">🚨</span>
+                    <h2>Emergency? We Are Here 24/7</h2>
+                    <p>Our emergency response team is always ready to support you. No delays, no answering machines —
+                        real people, real response, every time.</p>
+                    <a href="tel:+91XXXXXXXXXX" class="cta-phone" id="ctaPhoneBtn" aria-label="Call emergency helpline">
+                        📞 24/7 Helpline: +91 XXXXXXXXXX
+                    </a>
+                </div>
+            </div>
+        </section><!-- end #main-content -->
+
+        <!-- ════════════════════════════════════════════════════
+     GLOBAL FOOTER
+  ════════════════════════════════════════════════════ -->
+        <footer id="footer" role="contentinfo">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- Col 1: Brand -->
+                    <div class="footer-col footer-brand">
+                        <a href="index.html" class="logo" aria-label="Durga Fire Home">
+                            <div class="logo-icon" aria-hidden="true">
+                                <img src="./assets/logos/logo.webp" alt="Durga Fire Logo">
+                            </div>
+                            <div class="logo-text">
+                                <span class="logo-name">Durga Fire</span>
+                                <span class="logo-sub">Safety Consultants</span>
+                            </div>
+                        </a>
+                        <p class="footer-tagline">
+                            Protecting Lives. Securing Industries. Serving India Since 1990.<br>
+                            Gujarat's most trusted fire safety and emergency response organization.
+                        </p>
+                        <div class="footer-socials">
+                            <a href="#" class="footer-social" aria-label="Facebook">𝑓</a>
+                            <a href="#" class="footer-social" aria-label="LinkedIn">in</a>
+                            <a href="#" class="footer-social" aria-label="Twitter / X">𝕏</a>
+                            <a href="#" class="footer-social" aria-label="YouTube">▶</a>
+                            <a href="#" class="footer-social" aria-label="WhatsApp">💬</a>
+                        </div>
+                    </div>
+
+                    <!-- Col 2: Quick Links -->
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="industries.html">Industries</a></li>
+                            <li><a href="locations.html">Locations</a></li>
+                            <li><a href="careers.html">Careers</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: Services -->
+                    <div class="footer-col">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="services.html#fire-station">Fire Station Management</a></li>
+                            <li><a href="services.html#manpower">Trained Fire Manpower</a></li>
+                            <li><a href="services.html#medical">Industrial Medical Services</a></li>
+                            <li><a href="services.html#training">Fire Safety Training</a></li>
+                            <li><a href="services.html#ecc">ECC Operations</a></li>
+                            <li><a href="services.html#consulting">Fire Safety Consulting</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 5: Contact Info -->
+                    <div class="footer-col">
+                        <h4>Contact Info</h4>
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-icon" aria-hidden="true">📍</div>
+                            <div class="footer-contact-text">
+                                <strong>Office Address</strong>
+                                Gujarat, India<br>(Full address to be updated)
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-icon" aria-hidden="true">📞</div>
+                            <div class="footer-contact-text">
+                                <strong>Phone / Emergency</strong>
+                                <a href="tel:+91XXXXXXXXXX" style="color:inherit;">+91 XXXXXXXXXX</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-icon" aria-hidden="true">✉️</div>
+                            <div class="footer-contact-text">
+                                <strong>Email</strong>
+                                <a href="mailto:info@durgafire.com" style="color:inherit;">info@durgafire.com</a>
+                            </div>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="footer-contact-icon" aria-hidden="true">🕐</div>
+                            <div class="footer-contact-text">
+                                <strong>Operating Hours</strong>
+                                Mon–Sun · 24/7 Emergency Support
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom Bar -->
+                <div class="footer-bottom">
+                    <p class="footer-copy">
+                        &copy; 2026 Durga Fire &amp; Safety Consultants. All Rights Reserved.
+                    </p>
+                    <nav class="footer-bottom-links" aria-label="Footer legal links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms &amp; Conditions</a>
+                        <a href="sitemap.xml">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+
+</body>
+
+</html>

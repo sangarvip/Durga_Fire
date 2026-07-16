@@ -2993,3 +2993,245 @@ button {
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* ==========================================================================
+   DURGA FIRE SERVICES PAGE STYLE ADDITIONS
+   ========================================================================== */
+
+/* 1. Adjusted Hero for Fixed Header Overlap & Alignment */
+.page-hero {
+  background-color: var(--contact-navy, #0B1B3D);
+  background-image: linear-gradient(rgba(11, 27, 61, 0.92), rgba(11, 27, 61, 0.95));
+  color: #ffffff;
+  padding: 140px 0 80px 0;
+  /* High top padding avoids fixed header overlap */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-btn {
+  margin-top: 25px;
+}
+
+/* 2. Sticky Sub-Navigation Bar */
+.sticky-subnav {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--contact-border, #E2E8F0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+
+  /* 
+       Adjust this 'top' value based on the exact height of your fixed global header! 
+       Assuming header is ~70-80px tall. This ensures it sticks just below the header.
+    */
+  top: 70px;
+
+  z-index: 99;
+}
+
+.subnav-container {
+  padding: 0;
+}
+
+.subnav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  overflow-x: auto;
+  /* Allows horizontal scrolling on mobile */
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+}
+
+.subnav-list li a {
+  display: block;
+  padding: 18px 24px;
+  color: var(--contact-text-muted, #64748B);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s, background-color 0.2s;
+  border-bottom: 3px solid transparent;
+}
+
+.subnav-list li a:hover {
+  color: var(--contact-red, #D32F2F);
+  background-color: rgba(211, 47, 47, 0.03);
+  border-bottom: 3px solid var(--contact-red, #D32F2F);
+}
+
+/* 3. Service Repeating Sections */
+.service-section {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--contact-border, #E2E8F0);
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-light {
+  background-color: var(--contact-light-bg, #F4F6F9);
+}
+
+/* Smooth anchor scrolling offset to account for sticky headers */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px;
+  /* Accounts for fixed main header + sticky subnav */
+}
+
+/* 4. Section Headers & Intro Text */
+.service-header-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.service-icon {
+  font-size: 2.2rem;
+  background-color: rgba(211, 47, 47, 0.1);
+  color: var(--contact-red, #D32F2F);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.service-section .section-header {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.service-section .section-header::after {
+  display: none;
+  /* Removed red underline here since icon replaces it stylistically */
+}
+
+.service-intro-tag {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--contact-red, #D32F2F);
+  margin: 0 0 12px 0;
+}
+
+.service-overview {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--contact-text-primary, #1E293B);
+  max-width: 800px;
+  margin: 0 0 40px 0;
+}
+
+/* 5. Split Lists Grid System */
+.service-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.service-grid h3 {
+  font-size: 1.1rem;
+  color: var(--contact-navy, #0B1B3D);
+  margin: 0 0 20px 0;
+  border-bottom: 2px solid var(--contact-red, #D32F2F);
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* Bullet list overrides */
+.service-grid ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.two-col-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 20px;
+}
+
+.two-col-list li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--contact-text-primary, #1E293B);
+  font-size: 0.95rem;
+}
+
+.two-col-list li::before {
+  content: "•";
+  color: var(--contact-red, #D32F2F);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.check-list li {
+  margin-bottom: 12px;
+  color: #059669;
+  /* Trust/Success Green for benefits */
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* 6. Mini CTA */
+.mini-cta {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--contact-red, #D32F2F);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.mini-cta:hover {
+  color: var(--contact-red-hover, #B71C1C);
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* Mobile Subnav adjustment */
+  .subnav-list {
+    justify-content: flex-start;
+    /* Allows natural scrolling on mobile */
+  }
+
+  .subnav-list li a {
+    padding: 14px 16px;
+    font-size: 0.85rem;
+  }
+
+  .two-col-list {
+    grid-template-columns: 1fr;
+    /* Stack main list on phones */
+  }
+
+  .service-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-section {
+    padding: 60px 0;
+  }
+}
