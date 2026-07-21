@@ -1,0 +1,137 @@
+/* ==========================================================================
+   CAREERS PAGE STYLING ADDITIONS
+   ========================================================================== */
+
+/* Why Work With Us Grid (4-Column) */
+.why-work-section {
+    padding: 80px 0;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.why-card {
+    background: var(--contact-light-bg, #F4F6F9);
+    border: 1px solid var(--contact-border, #E2E8F0);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.why-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--contact-red, #D32F2F);
+}
+
+.why-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+
+.why-card h3 {
+    color: var(--contact-navy, #0B1B3D);
+    font-size: 1.15rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.why-card p {
+    color: var(--contact-text-muted, #64748B);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Standalone Summary Statement */
+.standalone-statement {
+    text-align: center;
+    background-color: rgba(11, 27, 61, 0.03);
+    border: 1px dashed var(--contact-navy, #0B1B3D);
+    padding: 16px 24px;
+    border-radius: 6px;
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+}
+
+.standalone-statement p {
+    margin: 0;
+    font-weight: 600;
+    color: var(--contact-navy, #0B1B3D);
+    font-size: 1.05rem;
+}
+
+/* Opportunities Section (2x3 Grid) */
+.opportunities-section {
+    padding: 80px 0;
+}
+
+.opportunities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.opportunity-card {
+    background: #ffffff;
+    border: 1px solid var(--contact-border, #E2E8F0);
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: var(--contact-card-shadow, 0 10px 30px -10px rgba(11, 27, 61, 0.08));
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--contact-red, #D32F2F);
+}
+
+.opp-icon {
+    font-size: 2.5rem;
+    background-color: var(--contact-light-bg, #F4F6F9);
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.opp-content h3 {
+    margin: 0 0 8px 0;
+    color: var(--contact-navy, #0B1B3D);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.opp-content p {
+    margin: 0 0 15px 0;
+    color: var(--contact-text-muted, #64748B);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .why-grid,
+    .opportunities-grid {
+        grid-template-columns: 1fr;
+    }
+}
