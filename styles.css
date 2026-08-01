@@ -269,7 +269,7 @@ button {
 .logo-icon {
   width: 44px;
   height: 44px;
-  background: linear-gradient(145deg, var(--white)0%, var(--navy-dark) 100%);
+  background: linear-gradient(145deg, var(--white)0%);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -1435,7 +1435,7 @@ button {
 /* ─── FOOTER ─────────────────────────────────────── */
 #footer {
   background: var(--navy-dark);
-  padding: 80px 0 0;
+  padding: 70px 0 0;
   position: relative;
 }
 
@@ -1451,9 +1451,11 @@ button {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.4fr;
-  gap: 50px;
-  margin-bottom: 60px;
+  grid-template-columns:
+    minmax(280px, 1.5fr) minmax(170px, .9fr) minmax(240px, 1.2fr) minmax(340px, 1.8fr);
+
+  gap: 48px;
+  align-items: start;
 }
 
 .footer-col h4 {
@@ -1584,6 +1586,7 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 15px;
 }
 
 .footer-copy {
@@ -1605,6 +1608,7 @@ button {
 .footer-bottom-links a:hover {
   color: rgba(255, 255, 255, 0.75);
 }
+
 
 /* ─── SCROLL REVEAL ANIMATION ────────────────────── */
 .reveal {

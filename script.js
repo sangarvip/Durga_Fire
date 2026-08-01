@@ -476,3 +476,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  // ─── LOAD GLOBAL FOOTER ──────────────────────────────────────
+  const footerContainer = document.getElementById('global-footer');
+  if (footerContainer) {
+    fetch('footer.html')
+      .then(response => {
+        if (!response.ok) throw new Error('Failed to load global footer');
+        return response.text();
+      })
+      .then(htmlData => {
+        footerContainer.innerHTML = htmlData;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+  }
+
+  // (Keep the rest of your existing JavaScript below this line)
+});
