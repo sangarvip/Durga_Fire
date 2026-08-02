@@ -2207,6 +2207,14 @@ button {
   letter-spacing: 0.06em;
 }
 
+.leader-desc {
+  margin-top: 12px;
+  color: var(--gray-600);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: justify;
+}
+
 /* ─── OUR TEAM / STAFF SECTION ───────────────────── */
 #our-team {
   background: var(--white);
