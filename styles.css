@@ -1027,25 +1027,27 @@ button {
   line-height: 1.45;
 }
 
-/* ─── INDUSTRIES ─────────────────────────────────── */
+/* ─── INDUSTRIES SECTION (STRICTLY SCOPED TO #industries) ─── */
 #industries {
-  background: var(--navy);
+  background: var(--navy, #0B1B3D);
   padding: 80px 0;
   position: relative;
 }
 
-.industries-header {
+#industries .industries-header {
   text-align: center;
   margin-bottom: 50px;
 }
 
-.industries-grid {
+/* Supports both class name variants safely */
+#industries .industry-grid,
+#industries .industries-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
 }
 
-.industry-item {
+#industries .industry-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1053,33 +1055,34 @@ button {
   gap: 14px;
   padding: 30px 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-md);
-  transition: all var(--transition);
+  border-radius: var(--radius-md, 12px);
+  transition: all var(--transition, 0.3s ease);
   cursor: default;
   position: relative;
   overflow: hidden;
 }
 
-.industry-item::before {
+#industries .industry-item::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(224, 52, 42, 0.10), transparent);
   opacity: 0;
-  transition: opacity var(--transition);
+  transition: opacity var(--transition, 0.3s ease);
 }
 
-.industry-item:hover {
+#industries .industry-item:hover {
   border-color: rgba(224, 52, 42, 0.45);
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.30);
 }
 
-.industry-item:hover::before {
+#industries .industry-item:hover::before {
   opacity: 1;
 }
 
-.industry-icon {
+/* ─── CIRCULAR ICON CONTAINER & PHOTO MASKING ─── */
+#industries .industry-icon {
   width: 58px;
   height: 58px;
   background: rgba(255, 255, 255, 0.07);
@@ -1089,17 +1092,30 @@ button {
   justify-content: center;
   font-size: 1.6rem;
   border: 1px solid rgba(255, 255, 255, 0.10);
-  transition: all var(--transition);
+  transition: all var(--transition, 0.3s ease);
   position: relative;
   z-index: 1;
+  overflow: hidden;
+  /* 👈 CRITICAL: Crops square JPEG photos directly into a clean circle */
+  flex-shrink: 0;
 }
 
-.industry-item:hover .industry-icon {
+/* Formats JPEG/PNG images inside the circular icon badge */
+#industries .industry-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 👈 Fills 58px circle completely without gaps */
+  border-radius: 50%;
+  display: block;
+}
+
+#industries .industry-item:hover .industry-icon {
   background: rgba(224, 52, 42, 0.20);
   border-color: rgba(224, 52, 42, 0.40);
 }
 
-.industry-name {
+#industries .industry-name {
   font-size: 0.80rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.75);
@@ -1110,9 +1126,32 @@ button {
   z-index: 1;
 }
 
-.industry-item:hover .industry-name {
-  color: var(--white);
+#industries .industry-item:hover .industry-name {
+  color: var(--white, #FFFFFF);
 }
+
+/* ─── RESPONSIVE BREAKPOINTS (SCOPED) ───────────── */
+@media (max-width: 1024px) {
+
+  #industries .industry-grid,
+  #industries .industries-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+
+  #industries .industry-grid,
+  #industries .industries-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  #industries .industry-item {
+    padding: 20px 12px;
+  }
+}
+
 
 /* ─── FEATURED PROJECTS ──────────────────────────── */
 #projects {

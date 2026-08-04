@@ -494,3 +494,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // (Keep the rest of your existing JavaScript below this line)
 });
+
