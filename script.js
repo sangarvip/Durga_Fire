@@ -252,6 +252,7 @@ function initHeroParticles() {
 /* ════════════════════════════════════════════════════
    CONSULTATION MODAL
 ════════════════════════════════════════════════════ */
+
 function initConsultModal() {
   const overlay = document.getElementById('consultModal');
   const closeBtn = document.getElementById('modalClose');
@@ -315,24 +316,49 @@ function initConsultModal() {
       submitBtn.disabled = true;
     }
 
-    // Simulate async send (replace with actual fetch/EmailJS in production)
-    await new Promise(r => setTimeout(r, 1400));
+    // Automatically grab all the data from the form
+    const formData = new FormData(form);
 
-    // Show success
-    const modalBody = overlay.querySelector('.modal-body');
-    if (modalBody) {
-      modalBody.innerHTML = `
-        <div class="form-success">
-          <span class="success-icon">✅</span>
-          <h3>Request Received!</h3>
-          <p>Thank you, <strong>${escapeHtml(name)}</strong>. Our team will contact you within 24 hours to schedule your free safety consultation.</p>
-          <p style="margin-top:12px; font-size:0.82rem; color:#8892A4;">For urgent matters, call us directly: <a href="tel:+91XXXXXXXXXX" style="color:#E0342A; font-weight:600;">+91 XXXXXXXXXX</a></p>
-        </div>
-      `;
+    try {
+      // Send the data to Formspree (REPLACE THE URL BELOW)
+      const response = await fetch('https://formspree.io/f/meajaeaw', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      // Show success message
+      const modalBody = overlay.querySelector('.modal-body');
+      if (modalBody) {
+        modalBody.innerHTML = `
+          <div class="form-success">
+            <span class="success-icon">✅</span>
+            <h3>Request Received!</h3>
+            <p>Thank you, <strong>${escapeHtml(name)}</strong>. Our team will contact you within 24 hours to schedule your free safety consultation.</p>
+            <p style="margin-top:12px; font-size:0.82rem; color:#8892A4;">For urgent matters, call us directly: <a href="tel:+91XXXXXXXXXX" style="color:#E0342A; font-weight:600;">+91 XXXXXXXXXX</a></p>
+          </div>
+        `;
+      }
+
+      // Auto-close after 4 seconds
+      setTimeout(close, 4000);
+
+    } catch (error) {
+      // Handle errors (e.g., if the user loses internet connection)
+      showFormError('Oops! There was a problem submitting your form. Please try again.');
+      
+      // Reset the button so they can try again
+      if (submitBtn) {
+        submitBtn.textContent = 'Send Consultation Request →';
+        submitBtn.disabled = false; 
+      }
     }
-
-    // Auto-close after 4 seconds
-    setTimeout(close, 4000);
   });
 }
 
