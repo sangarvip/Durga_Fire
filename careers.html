@@ -201,7 +201,8 @@
                     <p class="section-subtitle text-center">Fill out the form below or email your resume directly to our
                         HR team.</p>
 
-                    <form class="durga-contact-form" action="#" method="POST" enctype="multipart/form-data">
+                    <form id="jobApplicationForm" class="durga-contact-form" action="https://formspree.io/f/xljrjwoy"
+                        method="POST" enctype="multipart/form-data">
                         <div class="form-row-2">
                             <div class="form-group">
                                 <label for="applicantName">Full Name <span class="required">*</span></label>
@@ -303,6 +304,59 @@
     <div id="global-footer"></div>
 
     <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("jobApplicationForm");
+
+            if (!form) return;
+
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault(); // Prevent standard page redirection
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.innerHTML;
+
+                // 1. Set loading state on button
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = "Submitting Application...";
+
+                // 2. Gather form data (includes name, phone, email, role, resume_link, message)
+                const formData = new FormData(form);
+
+                try {
+                    // 3. Send request to Formspree
+                    const response = await fetch(form.action, {
+                        method: "POST",
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    // 4. Handle response
+                    if (response.ok) {
+                        alert("Thank you! Your application has been submitted successfully.");
+                        form.reset(); // Clear form fields
+                    } else {
+                        const data = await response.json();
+                        if (data.hasOwnProperty('errors')) {
+                            alert(data.errors.map(error => error.message).join(", "));
+                        } else {
+                            alert("Oops! There was a problem submitting your application. Please try again.");
+                        }
+                    }
+                } catch (error) {
+                    alert("Network error. Please check your internet connection and try again.");
+                } finally {
+                    // 5. Restore button state
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>

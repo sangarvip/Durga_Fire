@@ -31,20 +31,20 @@
             </a>
 
 
-  <!-- ════════════════════════════════════════════════════
+            <!-- ════════════════════════════════════════════════════
      MOBILE NAV
 ════════════════════════════════════════════════════ -->
-  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="services.html">Services</a>
-    <a href="careers.html">Careers</a>
-    <!-- <a href="industries.html">Industries</a>
+            <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+                <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="careers.html">Careers</a>
+                <!-- <a href="industries.html">Industries</a>
     <a href="locations.html">Locations</a> -->
-    <a href="contact.html">Contact</a>
-    </a>
-  </nav>
+                <a href="contact.html">Contact</a>
+                </a>
+            </nav>
 
 
 
@@ -263,8 +263,8 @@
                         <div class="office-badge">Registered Office</div>
                         <h3>Durga Fire Head Office</h3>
                         <p class="office-address">
-                            Raj Laxmi Complex 3 Rd Floor 301, Opposite Mahendra Showroom, Station Road, GIDC,
-                            Ankleshwar-393001, Gujarat
+                            22-23, Rajkamal Arcade, 2nd Floor Opposite Mahendra Showroom, old National Highway,
+                            Near Talukaa Seva Sadan Office, GIDC, Ankleshwar-393001, Gujarat
                         </p>
                         <p class="office-phone"><strong>Tel:</strong> +91 8866398155</p>
                         <a href="https://maps.google.com/?q=Gandhidham" target="_blank" rel="noopener"
@@ -287,7 +287,7 @@
                 <!-- Styled Map Container -->
                 <div class="map-embed-container">
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.1235489721054!2d70.1332453!3d23.0832454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA0JzU5LjciTiA3MMKwMDgnMDAuNyJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.517316315257!2d72.9859578!3d21.6047248!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be023fb584f9f09%3A0xe19385c20f184b2a!2sRajkamal%20Arcade%20Complex!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                         width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
@@ -299,69 +299,69 @@
 
     <div id="global-footer"></div>
     <script src="script.js"></script>
-    
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.querySelector('.durga-contact-form');
-  
-  // If the form isn't on this page, stop running the script
-  if (!form) return;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const submitBtn = form.querySelector('button[type="submit"]');
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('.durga-contact-form');
 
-    // 1. Basic validation (matching your new HTML inputs)
-    const name = document.getElementById('name')?.value.trim();
-    const company = document.getElementById('company')?.value.trim();
-    const location = document.getElementById('location')?.value.trim();
-    const mobile = document.getElementById('mobile')?.value.trim();
-    const email = document.getElementById('email')?.value.trim();
-    const service = document.getElementById('service')?.value.trim();
+            // If the form isn't on this page, stop running the script
+            if (!form) return;
 
-    if (!name || !company || !location || !mobile || !email || !service) {
-      showFormError('Please fill in all required fields.');
-      return;
-    }
-    
-    // Email format validation
-    if (!/^\S+@\S+\.\S+$/.test(email)) {
-      showFormError('Please enter a valid email address.');
-      return;
-    }
-    
-    // Mobile number validation (10 digits)
-    if (!/^\d{10}$/.test(mobile)) {
-      showFormError('Please enter a valid 10-digit mobile number.');
-      return;
-    }
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitBtn = form.querySelector('button[type="submit"]');
 
-    // 2. Show loading state
-    if (submitBtn) {
-      submitBtn.textContent = 'Sending…';
-      submitBtn.disabled = true;
-    }
+                // 1. Basic validation (matching your new HTML inputs)
+                const name = document.getElementById('name')?.value.trim();
+                const company = document.getElementById('company')?.value.trim();
+                const location = document.getElementById('location')?.value.trim();
+                const mobile = document.getElementById('mobile')?.value.trim();
+                const email = document.getElementById('email')?.value.trim();
+                const service = document.getElementById('service')?.value.trim();
 
-    // 3. Automatically grab all the data
-    const formData = new FormData(form);
+                if (!name || !company || !location || !mobile || !email || !service) {
+                    showFormError('Please fill in all required fields.');
+                    return;
+                }
 
-    try {
-      // 4. Send the data to Formspree (REPLACE THE URL BELOW)
-      const response = await fetch('https://formspree.io/f/meajaeaw', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json'
-        },
-        body: formData
-      });
+                // Email format validation
+                if (!/^\S+@\S+\.\S+$/.test(email)) {
+                    showFormError('Please enter a valid email address.');
+                    return;
+                }
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
+                // Mobile number validation (10 digits)
+                if (!/^\d{10}$/.test(mobile)) {
+                    showFormError('Please enter a valid 10-digit mobile number.');
+                    return;
+                }
 
-      // 5. Show success message by replacing the form content
-      form.innerHTML = `
+                // 2. Show loading state
+                if (submitBtn) {
+                    submitBtn.textContent = 'Sending…';
+                    submitBtn.disabled = true;
+                }
+
+                // 3. Automatically grab all the data
+                const formData = new FormData(form);
+
+                try {
+                    // 4. Send the data to Formspree (REPLACE THE URL BELOW)
+                    const response = await fetch('https://formspree.io/f/meajaeaw', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json'
+                        },
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+
+                    // 5. Show success message by replacing the form content
+                    form.innerHTML = `
         <div class="form-success" style="text-align: center; padding: 40px 20px;">
           <span class="success-icon" style="font-size: 48px; display: block; margin-bottom: 20px;">✅</span>
           <h3 style="color: #333; margin-bottom: 15px; font-size: 1.5rem;">Request Received!</h3>
@@ -375,40 +375,40 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
 
-    } catch (error) {
-      // 6. Handle errors (e.g., internet connection drops)
-      showFormError('Oops! There was a problem submitting your request. Please try again.');
-      
-      // Reset the button so they can try again
-      if (submitBtn) {
-        submitBtn.textContent = 'Request Consultation';
-        submitBtn.disabled = false; 
-      }
-    }
-  });
+                } catch (error) {
+                    // 6. Handle errors (e.g., internet connection drops)
+                    showFormError('Oops! There was a problem submitting your request. Please try again.');
 
-  // Helper function: Display error messages at the top of the form
-  function showFormError(msg) {
-    const existing = form.querySelector('.form-error-msg');
-    if (existing) existing.remove();
-    
-    const err = document.createElement('p');
-    err.className = 'form-error-msg';
-    err.style.cssText = 'color:#E0342A; font-size:0.9rem; margin-bottom:20px; font-weight:600; text-align:center; padding: 10px; background-color: #fee; border-radius: 4px;';
-    err.textContent = msg;
-    
-    form.prepend(err);
-    setTimeout(() => err.remove(), 4000);
-  }
+                    // Reset the button so they can try again
+                    if (submitBtn) {
+                        submitBtn.textContent = 'Request Consultation';
+                        submitBtn.disabled = false;
+                    }
+                }
+            });
 
-  // Helper function: Prevent HTML injection in the success message
-  function escapeHtml(str) {
-    return str.replace(/[&<>"']/g, m => ({
-      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    }[m]));
-  }
-});
-</script>
+            // Helper function: Display error messages at the top of the form
+            function showFormError(msg) {
+                const existing = form.querySelector('.form-error-msg');
+                if (existing) existing.remove();
+
+                const err = document.createElement('p');
+                err.className = 'form-error-msg';
+                err.style.cssText = 'color:#E0342A; font-size:0.9rem; margin-bottom:20px; font-weight:600; text-align:center; padding: 10px; background-color: #fee; border-radius: 4px;';
+                err.textContent = msg;
+
+                form.prepend(err);
+                setTimeout(() => err.remove(), 4000);
+            }
+
+            // Helper function: Prevent HTML injection in the success message
+            function escapeHtml(str) {
+                return str.replace(/[&<>"']/g, m => ({
+                    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+                }[m]));
+            }
+        });
+    </script>
 
 </body>
 

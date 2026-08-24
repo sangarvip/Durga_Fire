@@ -352,11 +352,11 @@ function initConsultModal() {
     } catch (error) {
       // Handle errors (e.g., if the user loses internet connection)
       showFormError('Oops! There was a problem submitting your form. Please try again.');
-      
+
       // Reset the button so they can try again
       if (submitBtn) {
         submitBtn.textContent = 'Send Consultation Request →';
-        submitBtn.disabled = false; 
+        submitBtn.disabled = false;
       }
     }
   });

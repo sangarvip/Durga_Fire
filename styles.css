@@ -1648,6 +1648,43 @@ button {
   color: rgba(255, 255, 255, 0.75);
 }
 
+/* Container placed below socials */
+.footer-credits {
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  /* Vertally centers text with logo height */
+  justify-content: flex-start;
+  /* Strictly keeps everything left-aligned */
+  gap: 8px;
+  width: 100%;
+}
+
+.credits-text {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  /* Matching the footer body text color */
+  line-height: 1;
+}
+
+.credits-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.credits-logo {
+  height: 120px;
+  /* Adjust height to fit your logo aspect ratio */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.credits-link:hover .credits-logo {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
 
 /* ─── SCROLL REVEAL ANIMATION ────────────────────── */
 .reveal {
